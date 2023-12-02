@@ -1,4 +1,4 @@
-import InfoSection from "./components/InfoSection/InfoSection";
+import InfoSection from "./components/info-section/InfoSection";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";

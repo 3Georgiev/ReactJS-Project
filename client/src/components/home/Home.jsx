@@ -1,4 +1,4 @@
-import WhyUs from "../WhyUs/WhyUs";
+import WhyUs from "../why-us/WhyUs";
 
 export default function Home() {
   return (
