@@ -48,9 +48,7 @@ export default function Header() {
               aria-controls="navbarSupportedContent"
               aria-expanded="false"
               aria-label="Toggle navigation"
-            >
-              <span className=""> </span>
-            </button>
+            ></button>
             <div
               className="collapse navbar-collapse"
               id="navbarSupportedContent"

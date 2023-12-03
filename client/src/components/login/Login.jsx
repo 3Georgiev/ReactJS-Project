@@ -8,6 +8,7 @@ export default function Login() {
         <label htmlFor="password">Password:</label>
         <input
           className="form-input"
+          autoComplete="on"
           type="password"
           id="password"
           name="password"
@@ -18,9 +19,9 @@ export default function Login() {
           </button>
         </div>
         <div className="extra-links">
-          <a href="#">Don't have an account yet?</a>
+          <a href="#">New to GameShop?</a>
           <span>|</span>
-          <a href="#">Register</a>
+          <a href="#">Sign up now!</a>
         </div>
       </form>
     </>

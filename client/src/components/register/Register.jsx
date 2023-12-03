@@ -15,6 +15,7 @@ export default function Register() {
         <label htmlFor="password">Password:</label>
         <input
           className="form-input"
+          autoComplete="on"
           type="password"
           id="password"
           name="password"
@@ -23,6 +24,7 @@ export default function Register() {
         <label htmlFor="confirm-password">Confirm password:</label>
         <input
           className="form-input"
+          autoComplete="on"
           type="password"
           id="confirm-password"
           name="confirm-password"
