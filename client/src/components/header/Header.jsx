@@ -68,6 +68,11 @@ export default function Header() {
                     Add Offer
                   </a>
                 </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="product.html">
+                    About
+                  </a>
+                </li>
               </ul>
             </div>
           </nav>

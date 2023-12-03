@@ -44,6 +44,9 @@ export default function InfoSection() {
                 <li>
                   <a href="about.html"> Offers </a>
                 </li>
+                <li>
+                  <a href="about.html"> About </a>
+                </li>
               </ul>
             </div>
           </div>
