@@ -1,8 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Path from "../../paths";
 import "./header.css";
 
 export default function Header() {
+  const location = useLocation();
+
+  const isActive = (targetPath) => {
+    return targetPath === location.pathname ? "active" : "";
+  };
+
   return (
     <header className="header_section">
       <div className="header_top">
@@ -23,11 +29,11 @@ export default function Header() {
                 <i className="fa fa-sign-in" aria-hidden="true" />
                 <span> Login </span>
               </Link>
-              <Link to={Path.Register} className="cart-link">
+              <Link to={Path.Register} className="account-link">
                 <i className="fa fa-user-plus" aria-hidden="true" />
                 <span> Register </span>
               </Link>
-              <Link to={Path.Logout} className="cart-link">
+              <Link to={Path.Logout} className="account-link">
                 <i className="fa fa-sign-out" aria-hidden="true" />
                 <span> Logout </span>
               </Link>
@@ -57,22 +63,22 @@ export default function Header() {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav">
-                <li className="nav-item active">
+                <li className={`nav-item ${isActive(Path.Home)}`}>
                   <Link to={Path.Home} className="nav-link">
                     Home
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className={`nav-item ${isActive(Path.Offers)}`}>
                   <Link to={Path.Offers} className="nav-link">
                     Offers
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className={`nav-item ${isActive("NA")}`}>
                   <Link to="" className="nav-link">
                     Add Offer
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className={`nav-item ${isActive(Path.About)}`}>
                   <Link to={Path.About} className="nav-link">
                     About
                   </Link>
