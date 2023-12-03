@@ -1,3 +1,5 @@
+import "./offerDetails.css";
+
 export default function OfferDetails() {
   return (
     <>

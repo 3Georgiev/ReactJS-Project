@@ -1,3 +1,5 @@
+import "./whyUs.css";
+
 export default function WhyUs() {
   return (
     <section className="why_us_section layout_padding">

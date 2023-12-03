@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Path from "../../paths";
+import "./header.css";
 
 export default function Header() {
   return (
@@ -48,7 +49,9 @@ export default function Header() {
               aria-controls="navbarSupportedContent"
               aria-expanded="false"
               aria-label="Toggle navigation"
-            ></button>
+            >
+              <span className=""> </span>
+            </button>
             <div
               className="collapse navbar-collapse"
               id="navbarSupportedContent"

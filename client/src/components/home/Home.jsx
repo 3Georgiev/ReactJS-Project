@@ -1,4 +1,5 @@
 import WhyUs from "../why-us/WhyUs";
+import "./home.css";
 
 export default function Home() {
   return (

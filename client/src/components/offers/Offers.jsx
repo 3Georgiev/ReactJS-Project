@@ -1,3 +1,5 @@
+import "./offers.css";
+
 export default function Offers() {
   return (
     <section className="product_section layout_padding">

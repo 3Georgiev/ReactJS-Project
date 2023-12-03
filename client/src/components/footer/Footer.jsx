@@ -1,3 +1,5 @@
+import "./footer.css";
+
 export default function Footer() {
   function getYear() {
     const currentDate = new Date();
