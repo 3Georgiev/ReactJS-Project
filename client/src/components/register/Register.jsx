@@ -4,7 +4,7 @@ export default function Register() {
   return (
     <>
       <form className="container">
-        <h2>Register</h2>
+        <h2>Become family member!</h2>
         <label htmlFor="username">Username:</label>
         <input
           className="form-input"

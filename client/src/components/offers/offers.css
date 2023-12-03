@@ -134,3 +134,11 @@
   background-color: transparent;
   color: #ff6c00;
 }
+
+.product_style {
+  font-weight: bold;
+}
+
+.text_style {
+  color: #ff6c00;
+}

@@ -4,7 +4,7 @@ export default function Login() {
   return (
     <>
       <form className="container">
-        <h2>Login</h2>
+        <h2>Welcome home, player!</h2>
         <label htmlFor="email">Email:</label>
         <input className="form-input" type="email" id="email" name="email" />
         <label htmlFor="password">Password:</label>

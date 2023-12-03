@@ -17,10 +17,13 @@ export default function Offers() {
                 </a>
               </div>
               <div className="detail-box">
-                <h5>Product Name</h5>
+                <h5 className="product_style">Product Name</h5>
                 <div className="product_info">
                   <h5>
-                    <span>$</span> 300
+                    <span className="text_style">$</span> 300
+                  </h5>
+                  <h5>
+                    <span className="text_style">Platform:</span> Steam
                   </h5>
                 </div>
               </div>
@@ -35,10 +38,13 @@ export default function Offers() {
                 </a>
               </div>
               <div className="detail-box">
-                <h5>Product Name</h5>
+                <h5 className="product_style">Product Name</h5>
                 <div className="product_info">
                   <h5>
-                    <span>$</span> 300
+                    <span className="text_style">$</span> 300
+                  </h5>
+                  <h5>
+                    <span className="text_style">Platform:</span> Steam
                   </h5>
                 </div>
               </div>
@@ -53,10 +59,13 @@ export default function Offers() {
                 </a>
               </div>
               <div className="detail-box">
-                <h5>Product Name</h5>
+                <h5 className="product_style">Product Name</h5>
                 <div className="product_info">
                   <h5>
-                    <span>$</span> 300
+                    <span className="text_style">$</span> 300
+                  </h5>
+                  <h5>
+                    <span className="text_style">Platform:</span> Steam
                   </h5>
                 </div>
               </div>
@@ -71,10 +80,13 @@ export default function Offers() {
                 </a>
               </div>
               <div className="detail-box">
-                <h5>Product Name</h5>
+                <h5 className="product_style">Product Name</h5>
                 <div className="product_info">
                   <h5>
-                    <span>$</span> 300
+                    <span className="text_style">$</span> 300
+                  </h5>
+                  <h5>
+                    <span className="text_style">Platform:</span> Steam
                   </h5>
                 </div>
               </div>
@@ -89,10 +101,13 @@ export default function Offers() {
                 </a>
               </div>
               <div className="detail-box">
-                <h5>Product Name</h5>
+                <h5 className="product_style">Product Name</h5>
                 <div className="product_info">
                   <h5>
-                    <span>$</span> 300
+                    <span className="text_style">$</span> 300
+                  </h5>
+                  <h5>
+                    <span className="text_style">Platform:</span> Steam
                   </h5>
                 </div>
               </div>
@@ -107,10 +122,13 @@ export default function Offers() {
                 </a>
               </div>
               <div className="detail-box">
-                <h5>Product Name</h5>
+                <h5 className="product_style">Product Name</h5>
                 <div className="product_info">
                   <h5>
-                    <span>$</span> 300
+                    <span className="text_style">$</span> 300
+                  </h5>
+                  <h5>
+                    <span className="text_style">Platform:</span> Steam
                   </h5>
                 </div>
               </div>
@@ -125,10 +143,13 @@ export default function Offers() {
                 </a>
               </div>
               <div className="detail-box">
-                <h5>Product Name</h5>
+                <h5 className="product_style">Product Name</h5>
                 <div className="product_info">
                   <h5>
-                    <span>$</span> 300
+                    <span className="text_style">$</span> 300
+                  </h5>
+                  <h5>
+                    <span className="text_style">Platform:</span> Steam
                   </h5>
                 </div>
               </div>
@@ -143,10 +164,13 @@ export default function Offers() {
                 </a>
               </div>
               <div className="detail-box">
-                <h5>Product Name</h5>
+                <h5 className="product_style">Product Name</h5>
                 <div className="product_info">
                   <h5>
-                    <span>$</span> 300
+                    <span className="text_style">$</span> 300
+                  </h5>
+                  <h5>
+                    <span className="text_style">Platform:</span> Steam
                   </h5>
                 </div>
               </div>
@@ -161,10 +185,13 @@ export default function Offers() {
                 </a>
               </div>
               <div className="detail-box">
-                <h5>Product Name</h5>
+                <h5 className="product_style">Product Name</h5>
                 <div className="product_info">
                   <h5>
-                    <span>$</span> 300
+                    <span className="text_style">$</span> 300
+                  </h5>
+                  <h5>
+                    <span className="text_style">Platform:</span> Steam
                   </h5>
                 </div>
               </div>

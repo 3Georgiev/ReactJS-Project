@@ -1,7 +1,7 @@
 body {
   font-family: "Poppins", sans-serif;
-  color: #f7f7f7;
-  background-color: rgb(73, 73, 73);
+  color: rgb(73, 73, 73);
+  background-color: #f7f7f7;
   overflow-x: hidden;
 }
 
