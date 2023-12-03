@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import Path from "../../paths";
+
 export default function Header() {
   return (
     <header className="header_section">
@@ -15,18 +18,18 @@ export default function Header() {
               </button>
             </form>
             <div className="user_option_box">
-              <a href="" className="account-link">
+              <Link to={Path.Login} className="account-link">
                 <i className="fa fa-sign-in" aria-hidden="true" />
                 <span> Login </span>
-              </a>
-              <a href="" className="cart-link">
+              </Link>
+              <Link to={Path.Register} className="cart-link">
                 <i className="fa fa-user-plus" aria-hidden="true" />
                 <span> Register </span>
-              </a>
-              <a href="" className="cart-link">
+              </Link>
+              <Link to={Path.Logout} className="cart-link">
                 <i className="fa fa-sign-out" aria-hidden="true" />
                 <span> Logout </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -34,9 +37,9 @@ export default function Header() {
       <div className="header_bottom">
         <div className="container-fluid">
           <nav className="navbar navbar-expand-lg custom_nav-container">
-            <a className="navbar-brand" href="index.html">
+            <Link to={Path.Home} className="navbar-brand">
               <span> GameShop </span>
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -54,24 +57,24 @@ export default function Header() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item active">
-                  <a className="nav-link" href="index.html">
+                  <Link to={Path.Home} className="nav-link">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="product.html">
+                  <Link to={Path.Offers} className="nav-link">
                     Offers
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="product.html">
+                  <Link to="" className="nav-link">
                     Add Offer
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="product.html">
+                  <Link to={Path.About} className="nav-link">
                     About
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
