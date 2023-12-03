@@ -9,6 +9,7 @@ import Register from "./components/register/Register";
 import Login from "./components/login/Login";
 import Offers from "./components/offers/Offers";
 import About from "./components/about/About";
+import NotFound from "./components/notfound/NotFound";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path={Path.Offers} element={<Offers />} />
         <Route path={Path.Register} element={<Register />} />
         <Route path={Path.Login} element={<Login />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <InfoSection />
       <Footer />
