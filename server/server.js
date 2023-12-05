@@ -1449,7 +1449,7 @@
     offers: {
       "53d4dbf5-7f41-47ba-b485-43eccb91cb95": {
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        title: "Table",
+        title: "Counter-Strike",
         model: "Swedish",
         price: 2015,
         region: "Medium table",
@@ -1461,7 +1461,7 @@
       },
       "f5929b5c-bca4-4026-8e6e-c09e73908f77": {
         _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "Table",
+        title: "Gta VI",
         model: "Swedish",
         price: 2015,
         region: "Medium table",
@@ -1473,7 +1473,7 @@
       },
       "c7f51805-242b-45ed-ae3e-80b68605141b": {
         _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "Table",
+        title: "Mortal Combat",
         model: "Swedish",
         price: 2015,
         region: "Medium table",
