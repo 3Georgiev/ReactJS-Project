@@ -11,24 +11,26 @@ import Offers from "./components/offers/Offers";
 import About from "./components/about/About";
 import NotFound from "./components/notfound/NotFound";
 import OfferCreate from "./components/offer-create/OfferCreate";
+import { AuthProvider } from "./context/authContext";
 
 function App() {
   return (
-    <div className="hero_area">
-      <Header />
-
-      <Routes>
-        <Route path={Path.Home} element={<Home />} />
-        <Route path={Path.About} element={<About />} />
-        <Route path={Path.Offers} element={<Offers />} />
-        <Route path={Path.OfferCreate} element={<OfferCreate />} />
-        <Route path={Path.Register} element={<Register />} />
-        <Route path={Path.Login} element={<Login />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <InfoSection />
-      <Footer />
-    </div>
+    <AuthProvider>
+      <div className="hero_area">
+        <Header />
+        <Routes>
+          <Route path={Path.Home} element={<Home />} />
+          <Route path={Path.About} element={<About />} />
+          <Route path={Path.Offers} element={<Offers />} />
+          <Route path={Path.OfferCreate} element={<OfferCreate />} />
+          <Route path={Path.Register} element={<Register />} />
+          <Route path={Path.Login} element={<Login />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <InfoSection />
+        <Footer />
+      </div>
+    </AuthProvider>
   );
 }
 
