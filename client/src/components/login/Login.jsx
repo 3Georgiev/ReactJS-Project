@@ -2,6 +2,8 @@ import "./login.css";
 import { useContext } from "react";
 import useForm from "../../hooks/useForm";
 import AuthContext from "../../context/authContext";
+import { Link } from "react-router-dom";
+import Path from "../../paths";
 
 const LoginFormKeys = {
   Email: "email",
@@ -44,9 +46,9 @@ export default function Login() {
           </button>
         </div>
         <div className="login-extra-links">
-          <a href="#">New to GameShop?</a>
+          <Link to={Path.Register}>New to GameShop?</Link>
           <span>|</span>
-          <a href="#">Sign up now!</a>
+          <Link to={Path.Register}>Sign up now!</Link>
         </div>
       </form>
     </>

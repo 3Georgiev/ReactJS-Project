@@ -3,6 +3,8 @@ import "./register.css";
 import { useContext } from "react";
 import useForm from "../../hooks/useForm";
 import AuthContext from "../../context/authContext";
+import { Link } from "react-router-dom";
+import Path from "../../paths";
 
 const RegisterFormKeys = {
   Email: "email",
@@ -69,9 +71,9 @@ export default function Register() {
           </button>
         </div>
         <div className="register-extra-links">
-          <a href="#">Already have an account?</a>
+          <Link to={Path.Login}>Already have an account?</Link>
           <span>|</span>
-          <a href="#">Login</a>
+          <Link to={Path.Login}>Login</Link>
         </div>
       </form>
     </>
