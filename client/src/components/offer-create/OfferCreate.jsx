@@ -32,9 +32,17 @@ export default function OfferCreate() {
         <input
           className="offer-create-form-input"
           autoComplete="on"
-          type="platform"
+          type="text"
           id="platform"
           name="platform"
+        />
+        <label htmlFor="confirm-password">Image Url:</label>
+        <input
+          className="offer-create-form-input"
+          autoComplete="on"
+          type="text"
+          id="imageUrl"
+          name="imageUrl"
         />
         <label htmlFor="confirm-password">Description:</label>
         <input
