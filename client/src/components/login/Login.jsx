@@ -1,16 +1,33 @@
+import useForm from "../../hooks/useForm";
 import "./login.css";
 
+const LoginFormKeys = {
+  Email: "email",
+  Password: "password",
+};
+
 export default function Login() {
+  const loginSubmitHandler = () => {
+    console.log(values);
+  };
+
+  const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+    [LoginFormKeys.Email]: "",
+    [LoginFormKeys.Password]: "",
+  });
+
   return (
     <>
-      <form className="container">
+      <form className="container" onSubmit={onSubmit}>
         <h2>Welcome home, player!</h2>
         <label htmlFor="email">Email:</label>
         <input
           className="login-form-input"
           type="email"
           id="email"
-          name="email"
+          name={LoginFormKeys.Email}
+          value={values[LoginFormKeys.Email]}
+          onChange={onChange}
         />
         <label htmlFor="password">Password:</label>
         <input
@@ -18,7 +35,9 @@ export default function Login() {
           autoComplete="on"
           type="password"
           id="password"
-          name="password"
+          name={LoginFormKeys.Password}
+          value={values[LoginFormKeys.Password]}
+          onChange={onChange}
         />
         <div>
           <button className="login-form-btn" type="submit">
