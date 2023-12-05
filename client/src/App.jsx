@@ -10,6 +10,7 @@ import Login from "./components/login/Login";
 import Offers from "./components/offers/Offers";
 import About from "./components/about/About";
 import NotFound from "./components/notfound/NotFound";
+import OfferCreate from "./components/offer-create/OfferCreate";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path={Path.Home} element={<Home />} />
         <Route path={Path.About} element={<About />} />
         <Route path={Path.Offers} element={<Offers />} />
+        <Route path={Path.OfferCreate} element={<OfferCreate />} />
         <Route path={Path.Register} element={<Register />} />
         <Route path={Path.Login} element={<Login />} />
         <Route path="*" element={<NotFound />} />

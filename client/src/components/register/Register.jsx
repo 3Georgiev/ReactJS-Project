@@ -7,16 +7,21 @@ export default function Register() {
         <h2>Become family member!</h2>
         <label htmlFor="username">Username:</label>
         <input
-          className="form-input"
+          className="register-form-input"
           type="text"
           id="username"
           name="username"
         />
         <label htmlFor="email">Email:</label>
-        <input className="form-input" type="email" id="email" name="email" />
+        <input
+          className="register-form-input"
+          type="email"
+          id="email"
+          name="email"
+        />
         <label htmlFor="password">Password:</label>
         <input
-          className="form-input"
+          className="register-form-input"
           autoComplete="on"
           type="password"
           id="password"
@@ -25,18 +30,18 @@ export default function Register() {
 
         <label htmlFor="confirm-password">Confirm password:</label>
         <input
-          className="form-input"
+          className="register-form-input"
           autoComplete="on"
           type="password"
           id="confirm-password"
           name="confirm-password"
         />
         <div>
-          <button className="form-btn" type="submit">
+          <button className="register-form-btn" type="submit">
             Register
           </button>
         </div>
-        <div className="extra-links">
+        <div className="register-extra-links">
           <a href="#">Already have an account?</a>
           <span>|</span>
           <a href="#">Login</a>

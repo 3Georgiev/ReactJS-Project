@@ -5,7 +5,7 @@ label {
   color: #212529;
 }
 
-.form-input {
+.register-form-input {
   width: 40%;
   padding: 12px;
   margin-bottom: 16px;
@@ -14,7 +14,7 @@ label {
   border-radius: 8px;
 }
 
-.form-btn {
+.register-form-btn {
   background-color: #ff6c00;
   color: #ffffff;
   padding: 14px 20px;
@@ -24,20 +24,20 @@ label {
   font-size: 16px;
 }
 
-.form-btn:hover {
+.register-form-btn:hover {
   background-color: #ce5600;
 }
-.extra-links {
+.register-extra-links {
   margin-top: 20px;
 }
 
-.extra-links a {
+.register-extra-links a {
   color: #212529;
   text-decoration: none;
   margin: 0 10px;
   font-size: 14px;
 }
 
-.extra-links :hover {
+.register-extra-links :hover {
   text-decoration: underline;
 }

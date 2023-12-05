@@ -74,7 +74,7 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className={`nav-item ${isActive("NA")}`}>
-                  <Link to="" className="nav-link">
+                  <Link to={Path.OfferCreate} className="nav-link">
                     Add Offer
                   </Link>
                 </li>
