@@ -10,8 +10,12 @@ export const login = (email, password) => {
   return result;
 };
 
-export const register = (email, password) => {
-  const result = request.post(`${baseUrl}/register`);
+export const register = (email, password, username) => {
+  const result = request.post(`${baseUrl}/register`, {
+    email,
+    password,
+    username,
+  });
   return result;
 };
 
