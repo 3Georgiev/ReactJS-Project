@@ -1,9 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import Path from "../../paths";
 import "./header.css";
+import { useContext } from "react";
+import AuthContext from "../../context/authContext";
 
 export default function Header() {
   const location = useLocation();
+
+  const { isAuthenticated } = useContext(AuthContext);
 
   const isActive = (targetPath) => {
     return targetPath === location.pathname ? "active" : "";
@@ -25,18 +29,23 @@ export default function Header() {
               </button>
             </form>
             <div className="user_option_box">
-              <Link to={Path.Login} className="account-link">
-                <i className="fa fa-sign-in" aria-hidden="true" />
-                <span> Login </span>
-              </Link>
-              <Link to={Path.Register} className="account-link">
-                <i className="fa fa-user-plus" aria-hidden="true" />
-                <span> Register </span>
-              </Link>
-              <Link to={Path.Logout} className="account-link">
-                <i className="fa fa-sign-out" aria-hidden="true" />
-                <span> Logout </span>
-              </Link>
+              {!isAuthenticated ? (
+                <>
+                  <Link to={Path.Login} className="account-link">
+                    <i className="fa fa-sign-in" aria-hidden="true" />
+                    <span> Login </span>
+                  </Link>
+                  <Link to={Path.Register} className="account-link">
+                    <i className="fa fa-user-plus" aria-hidden="true" />
+                    <span> Register </span>
+                  </Link>
+                </>
+              ) : (
+                <Link to={Path.Logout} className="account-link">
+                  <i className="fa fa-sign-out" aria-hidden="true" />
+                  <span> Logout </span>
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -73,11 +82,14 @@ export default function Header() {
                     Offers
                   </Link>
                 </li>
-                <li className={`nav-item ${isActive("NA")}`}>
-                  <Link to={Path.OfferCreate} className="nav-link">
-                    Add Offer
-                  </Link>
-                </li>
+                {isAuthenticated && (
+                  <li className={`nav-item ${isActive("NA")}`}>
+                    <Link to={Path.OfferCreate} className="nav-link">
+                      Add Offer
+                    </Link>
+                  </li>
+                )}
+
                 <li className={`nav-item ${isActive(Path.About)}`}>
                   <Link to={Path.About} className="nav-link">
                     About
