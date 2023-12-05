@@ -6,6 +6,7 @@ const Path = {
   About: "/about",
   Offers: "/offers",
   OfferCreate: "/offers/create",
+  Logout: "/logout",
 };
 
 export default Path;

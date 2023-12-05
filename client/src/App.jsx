@@ -12,6 +12,7 @@ import About from "./components/about/About";
 import NotFound from "./components/notfound/NotFound";
 import OfferCreate from "./components/offer-create/OfferCreate";
 import { AuthProvider } from "./context/authContext";
+import Logout from "./components/logout/logout";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path={Path.OfferCreate} element={<OfferCreate />} />
           <Route path={Path.Register} element={<Register />} />
           <Route path={Path.Login} element={<Login />} />
+          <Route path={Path.Logout} element={<Logout />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <InfoSection />

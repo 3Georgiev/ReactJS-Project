@@ -7,6 +7,10 @@ export const login = (email, password) => {
     email,
     password,
   });
+  return result;
+};
 
+export const logout = () => {
+  const result = request.get(`${baseUrl}/logout`);
   return result;
 };
