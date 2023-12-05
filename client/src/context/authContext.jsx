@@ -6,7 +6,10 @@ import Path from "../paths";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useState(() => {
+    localStorage.removeItem("accessToken");
+    return {};
+  });
 
   const navigate = useNavigate();
 
@@ -17,7 +20,7 @@ export const AuthProvider = ({ children }) => {
 
     localStorage.setItem("accessToken", result.accessToken);
 
-    console.log(result);
+    navigate(Path.Home);
   };
 
   const logoutHandler = async () => {
