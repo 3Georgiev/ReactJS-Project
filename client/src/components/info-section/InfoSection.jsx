@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import "./infoSection.css";
+import Path from "../../paths";
 
 export default function InfoSection() {
   return (
@@ -41,13 +43,13 @@ export default function InfoSection() {
               <h5>Useful Link</h5>
               <ul>
                 <li>
-                  <a href="index.html"> Home </a>
+                  <Link to={Path.Home}> Home </Link>
                 </li>
                 <li>
-                  <a href="about.html"> Offers </a>
+                  <Link to={Path.Offers}> Offers </Link>
                 </li>
                 <li>
-                  <a href="about.html"> About </a>
+                  <Link to={Path.About}> About </Link>
                 </li>
               </ul>
             </div>
