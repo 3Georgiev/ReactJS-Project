@@ -1,23 +1,46 @@
 import "./register.css";
 
+import { useContext } from "react";
+import useForm from "../../hooks/useForm";
+import AuthContext from "../../context/authContext";
+
+const RegisterFormKeys = {
+  Email: "email",
+  Username: "username",
+  Password: "password",
+  PasswordConfirm: "confirm-password",
+};
+
 export default function Register() {
+  const { registerSubmitHandler } = useContext(AuthContext);
+  const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+    [RegisterFormKeys.Email]: "",
+    [RegisterFormKeys.Username]: "",
+    [RegisterFormKeys.Password]: "",
+    [RegisterFormKeys.PasswordConfirm]: "",
+  });
+
   return (
     <>
-      <form className="container">
+      <form className="container" onSubmit={onSubmit}>
         <h2>Become family member!</h2>
         <label htmlFor="username">Username:</label>
         <input
           className="register-form-input"
           type="text"
           id="username"
-          name="username"
+          name={RegisterFormKeys.Username}
+          value={values[RegisterFormKeys.Username]}
+          onChange={onChange}
         />
         <label htmlFor="email">Email:</label>
         <input
           className="register-form-input"
           type="email"
           id="email"
-          name="email"
+          name={RegisterFormKeys.Email}
+          value={values[RegisterFormKeys.Email]}
+          onChange={onChange}
         />
         <label htmlFor="password">Password:</label>
         <input
@@ -25,7 +48,9 @@ export default function Register() {
           autoComplete="on"
           type="password"
           id="password"
-          name="password"
+          name={RegisterFormKeys.Password}
+          value={values[RegisterFormKeys.Password]}
+          onChange={onChange}
         />
 
         <label htmlFor="confirm-password">Confirm password:</label>
@@ -34,7 +59,9 @@ export default function Register() {
           autoComplete="on"
           type="password"
           id="confirm-password"
-          name="confirm-password"
+          name={RegisterFormKeys.PasswordConfirm}
+          value={values[RegisterFormKeys.PasswordConfirm]}
+          onChange={onChange}
         />
         <div>
           <button className="register-form-btn" type="submit">
