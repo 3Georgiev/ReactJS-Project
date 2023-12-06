@@ -49,7 +49,13 @@ export default function OfferDetails() {
           </div>
         </div>
       </div>
-      {showDeleteModal && <OfferDeleteModal showDelete={showDelete} />}
+      {showDeleteModal && (
+        <OfferDeleteModal
+          showDelete={showDelete}
+          offerId={offerId}
+          title={offer.title}
+        />
+      )}
     </div>
   );
 }
