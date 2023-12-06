@@ -1,30 +1,39 @@
 import { useParams } from "react-router-dom";
 import "./offerDetails.css";
+import * as offerService from "../../services/offerService";
+import { useEffect, useState } from "react";
 
 export default function OfferDetails() {
+  const [offer, setOffer] = useState({});
+
   const { offerId } = useParams();
+
+  useEffect(() => {
+    offerService
+      .getOne(offerId)
+      .then((result) => setOffer(result))
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [offerId]);
 
   return (
     <div className="details_container">
-      <h2 id="gameTitle">Game Title</h2>
+      <h2 className="title_color" id="gameTitle">
+        {offer.title}
+      </h2>
       <div className="product_image">
-        <img src="images/p1.png" alt="Game Cover" />
+        <img src={offer.imageUrl} alt="Game Cover" />
       </div>
       <div className="product_details">
-        <p className="price">$49.99</p>
-        <p className="description">
-          Immerse yourself in an epic gaming experience with our thrilling game.
-          Explore a rich and captivating virtual world filled with adventure and
-          challenges.
+        <p className="price">${offer.price}</p>
+        <p className="description">{offer.description}</p>
+
+        <p>
+          <strong>Regional Limitation:</strong> {offer.region}
         </p>
         <p>
-          <strong>Title:</strong> Game Title
-        </p>
-        <p>
-          <strong>Regional Limitation:</strong> Region Free
-        </p>
-        <p>
-          <strong>Platform:</strong> PC, PlayStation, Xbox
+          <strong>Platform:</strong> {offer.platform}
         </p>
         <div className="button_container">
           <button className="buy_btn">Buy</button>

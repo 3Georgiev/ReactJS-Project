@@ -15,8 +15,6 @@ export default function OfferList() {
       });
   }, []);
 
-  console.log(offers);
-
   return (
     <section className="product_section layout_padding">
       <div className="container">
