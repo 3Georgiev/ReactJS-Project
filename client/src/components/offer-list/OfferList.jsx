@@ -1,6 +1,6 @@
-import "./offers.css";
+import "./offerList.css";
 
-export default function Offers() {
+export default function OfferList() {
   return (
     <section className="product_section layout_padding">
       <div className="container">
