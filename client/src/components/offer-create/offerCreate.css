@@ -16,7 +16,8 @@ label {
 
 .offer-create-form-description {
   width: 40%;
-  padding: 80px;
+  height: 200px;
+  padding: 12px;
   margin-bottom: 16px;
   box-sizing: border-box;
   border: 1px solid #ccc;

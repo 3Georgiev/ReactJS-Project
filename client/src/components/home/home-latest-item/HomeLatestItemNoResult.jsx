@@ -19,7 +19,7 @@ export default function HomeLatestItemNoResult() {
             </div>
             <div className="col-md-6">
               <div className="img-box">
-                <img src="images/noresult.png" alt="" />
+                <img src="/images/noresult.png" alt="" />
               </div>
             </div>
           </div>

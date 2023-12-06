@@ -30,7 +30,7 @@ export default function Header() {
             </form>
             <Link to={Path.Home}>
               {" "}
-              <img src="images/logo.png"></img>{" "}
+              <img src="/images/logo.png"></img>{" "}
             </Link>
             <div className="user_option_box">
               {!isAuthenticated ? (
