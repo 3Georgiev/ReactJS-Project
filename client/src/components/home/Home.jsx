@@ -3,8 +3,7 @@ import WhyUs from "../why-us/WhyUs";
 import "./home.css";
 import * as offerService from "../../services/offerService";
 import HomeLatestItem from "./home-latest-item/HomeLatestItem";
-import { Link } from "react-router-dom";
-import Path from "../../paths";
+import HomeLatestItemNoResult from "./home-latest-item/HomeLatestItemNoResult";
 
 export default function Home() {
   const [offers, setOffers] = useState([]);
@@ -37,27 +36,7 @@ export default function Home() {
                 />
               ))
             ) : (
-              <div className="carousel-item active">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="detail-box">
-                        <h1>There are no current offers :(</h1>
-                        <p>
-                          If you wish to be the first to add an offer please
-                          visit the create page!
-                        </p>
-                        <Link to={Path.OfferCreate}> Create </Link>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="img-box">
-                        <img src="images/noresult.png" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <HomeLatestItemNoResult />
             )}
             <div className="carousel_btn_box">
               <a
