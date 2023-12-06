@@ -1,6 +1,6 @@
+import "./offerList.css";
 import { useEffect, useState } from "react";
 import * as offerService from "../../services/offerService";
-import "./offerList.css";
 import OfferListItem from "./offer-list-item/OfferListItem";
 
 export default function OfferList() {
@@ -26,7 +26,6 @@ export default function OfferList() {
     setViewMore(false);
   };
 
-  console.log("render");
   return (
     <section className="product_section layout_padding">
       <div className="container">

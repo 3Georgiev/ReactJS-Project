@@ -7,7 +7,7 @@ export const getAll = async (viewmore) => {
     return await request.get(`${baseUrl}?sortBy=_createdOn%20desc`);
   } else {
     return await request.get(
-      `${baseUrl}?sortBy=_createdOn%20desc&offset=0&pageSize=9`
+      `${baseUrl}?sortBy=_createdOn%20desc&offset=0&pageSize=6`
     );
   }
 };
