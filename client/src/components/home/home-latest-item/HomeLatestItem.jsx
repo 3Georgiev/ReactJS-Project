@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Path from "../../../paths";
+import { useEffect } from "react";
 
 export default function HomeLatestItem({
   _id,
@@ -10,7 +11,7 @@ export default function HomeLatestItem({
   index,
 }) {
   const activeCarousel = index === 0;
-
+  const shortDescriptiopn = `${description.slice(0, 300)}... `;
   return (
     <div className={`carousel-item ${activeCarousel ? "active" : ""}`}>
       <div className="container">
@@ -18,7 +19,7 @@ export default function HomeLatestItem({
           <div className="col-md-6">
             <div className="detail-box">
               <h1>{title}</h1>
-              <p>{description}</p>
+              <p>{shortDescriptiopn}</p>
               <Link to={`${Path.Offers}/details/${_id}`}> Details </Link>
             </div>
           </div>
