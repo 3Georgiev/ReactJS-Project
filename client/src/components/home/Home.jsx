@@ -28,7 +28,7 @@ export default function Home() {
         >
           <h1 className="latest-offers">Latest Offers</h1>
           <div className="carousel-inner">
-            {offers.length === 0 ? (
+            {offers.length > 0 ? (
               offers.map((offer) => (
                 <HomeLatestItem
                   key={offer._id}
