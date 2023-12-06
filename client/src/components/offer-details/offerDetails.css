@@ -10,13 +10,13 @@
 }
 
 .product_image img {
-  max-width: 100%;
-  height: auto;
+  width: 700px;
+  height: 400px;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
 }
-
 .product_details {
   padding: 20px;
   background-color: rgb(73, 73, 73);
@@ -82,4 +82,9 @@
 
 .edit_delete_btns button:hover {
   background-color: #0056b3;
+}
+
+.title_color {
+  color: rgb(73, 73, 73);
+  font-weight: bold;
 }
