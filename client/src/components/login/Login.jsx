@@ -21,7 +21,7 @@ export default function Login() {
     <>
       <form className="container" onSubmit={onSubmit}>
         <h2>Welcome home, player!</h2>
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email">Email</label>
         <input
           className="login-form-input"
           type="email"
@@ -30,7 +30,7 @@ export default function Login() {
           value={values[LoginFormKeys.Email]}
           onChange={onChange}
         />
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password">Password</label>
         <input
           className="login-form-input"
           autoComplete="on"

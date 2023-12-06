@@ -5,21 +5,21 @@ export default function OfferCreate() {
     <>
       <form className="container">
         <h2>Create an offer!</h2>
-        <label htmlFor="username">Game Title:</label>
+        <label htmlFor="username">Game Title</label>
         <input
           className="offer-create-form-input"
           type="text"
           id="title"
           name="title"
         />
-        <label htmlFor="email">Price:</label>
+        <label htmlFor="email">Price</label>
         <input
           className="offer-create-form-input"
           type="number"
           id="price"
           name="price"
         />
-        <label htmlFor="password">Regional Limitation:</label>
+        <label htmlFor="password">Regional Limitation</label>
         <input
           className="offer-create-form-input"
           autoComplete="on"
@@ -28,7 +28,7 @@ export default function OfferCreate() {
           name="region"
         />
 
-        <label htmlFor="confirm-password">Platform:</label>
+        <label htmlFor="confirm-password">Platform</label>
         <input
           className="offer-create-form-input"
           autoComplete="on"
@@ -36,7 +36,7 @@ export default function OfferCreate() {
           id="platform"
           name="platform"
         />
-        <label htmlFor="confirm-password">Image Url:</label>
+        <label htmlFor="confirm-password">Image Url</label>
         <input
           className="offer-create-form-input"
           autoComplete="on"
@@ -44,7 +44,7 @@ export default function OfferCreate() {
           id="imageUrl"
           name="imageUrl"
         />
-        <label htmlFor="confirm-password">Description:</label>
+        <label htmlFor="confirm-password">Description</label>
         <input
           className="offer-create-form-description"
           autoComplete="on"
@@ -57,11 +57,11 @@ export default function OfferCreate() {
             Create
           </button>
         </div>
-        <div className="offer-create-extra-links">
+        {/* <div className="offer-create-extra-links">
           <a href="#">Already have an account?</a>
           <span>|</span>
           <a href="#">Login</a>
-        </div>
+        </div> */}
       </form>
     </>
   );

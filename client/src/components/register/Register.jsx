@@ -26,7 +26,7 @@ export default function Register() {
     <>
       <form className="container" onSubmit={onSubmit}>
         <h2>Become family member!</h2>
-        <label htmlFor="username">Username:</label>
+        <label htmlFor="username">Username</label>
         <input
           className="register-form-input"
           type="text"
@@ -35,7 +35,7 @@ export default function Register() {
           value={values[RegisterFormKeys.Username]}
           onChange={onChange}
         />
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email">Email</label>
         <input
           className="register-form-input"
           type="email"
@@ -44,7 +44,7 @@ export default function Register() {
           value={values[RegisterFormKeys.Email]}
           onChange={onChange}
         />
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password">Password</label>
         <input
           className="register-form-input"
           autoComplete="on"
@@ -55,7 +55,7 @@ export default function Register() {
           onChange={onChange}
         />
 
-        <label htmlFor="confirm-password">Confirm password:</label>
+        <label htmlFor="confirm-password">Confirm password</label>
         <input
           className="register-form-input"
           autoComplete="on"

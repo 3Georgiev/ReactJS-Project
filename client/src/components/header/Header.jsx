@@ -7,7 +7,7 @@ import AuthContext from "../../context/authContext";
 export default function Header() {
   const location = useLocation();
 
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, username } = useContext(AuthContext);
 
   const isActive = (targetPath) => {
     return targetPath === location.pathname ? "active" : "";
@@ -57,9 +57,12 @@ export default function Header() {
       <div className="header_bottom">
         <div className="container-fluid">
           <nav className="navbar navbar-expand-lg custom_nav-container">
-            <Link to={Path.Home} className="navbar-brand">
-              <span> GameHaven </span>
-            </Link>
+            {isAuthenticated && (
+              <Link to={Path.Home} className="navbar-brand">
+                <span> Welcome, {username}! </span>
+              </Link>
+            )}
+
             <button
               className="navbar-toggler"
               type="button"
