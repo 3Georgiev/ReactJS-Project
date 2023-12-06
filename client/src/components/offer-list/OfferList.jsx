@@ -19,7 +19,7 @@ export default function OfferList() {
     <section className="product_section layout_padding">
       <div className="container">
         <div className="heading_container heading_center">
-          <h2>Our Products</h2>
+          <h2>All avaliable offers</h2>
         </div>
         <div className="row">
           {offers.map((offer) => (

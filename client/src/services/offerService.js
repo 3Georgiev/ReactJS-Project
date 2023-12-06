@@ -3,7 +3,10 @@ import * as request from "../lib/request";
 const baseUrl = "http://localhost:3030/data/offers";
 
 export const getAll = async () => {
-  const result = await request.get(baseUrl);
+  //Change pagesize to 9 after implement view more
+  const result = await request.get(
+    `${baseUrl}?sortBy=_createdOn%20desc&offset=0&pageSize=25`
+  );
   return result;
 };
 

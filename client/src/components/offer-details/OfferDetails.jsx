@@ -43,6 +43,19 @@ export default function OfferDetails() {
           </div>
         </div>
       </div>
+
+      {/* modal test */}
+      <div className="modal">
+        <div className="modal-content">
+          <p>Are you sure you want to delete this offer?</p>
+          <p>This action cannot be undone!</p>
+          <div className="modal-buttons">
+            <button>Cancel</button>
+            <button>Delete</button>
+          </div>
+        </div>
+      </div>
+      {/* modal test */}
     </div>
   );
 }
