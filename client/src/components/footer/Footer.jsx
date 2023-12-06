@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="footer_section">
       <div className="container">
         <p>
-          © <span>{currentYear}</span> All Rights Reserved By GameShop
+          © <span>{currentYear}</span> All Rights Reserved By GameHaven
         </p>
       </div>
     </footer>

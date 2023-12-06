@@ -10,9 +10,9 @@ export default function InfoSection() {
           <div className="col-md-3">
             <div className="info_contact">
               <h5>
-                <a href="" className="navbar-brand">
-                  <span> GameShop </span>
-                </a>
+                <Link to={Path.Home} className="navbar-brand">
+                  <span> GameHaven </span>
+                </Link>
               </h5>
               <p>
                 <i className="fa fa-map-marker" aria-hidden="true" />

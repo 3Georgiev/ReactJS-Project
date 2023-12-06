@@ -46,7 +46,7 @@ export default function Login() {
           </button>
         </div>
         <div className="login-extra-links">
-          <Link to={Path.Register}>New to GameShop?</Link>
+          <Link to={Path.Register}>New to GameHaven?</Link>
           <span>|</span>
           <Link to={Path.Register}>Sign up now!</Link>
         </div>

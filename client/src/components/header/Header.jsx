@@ -28,6 +28,8 @@ export default function Header() {
                 <i className="fa fa-search" aria-hidden="true" />
               </button>
             </form>
+            <img src="images/logo.png"></img>
+
             <div className="user_option_box">
               {!isAuthenticated ? (
                 <>
@@ -54,7 +56,7 @@ export default function Header() {
         <div className="container-fluid">
           <nav className="navbar navbar-expand-lg custom_nav-container">
             <Link to={Path.Home} className="navbar-brand">
-              <span> GameShop </span>
+              <span> GameHaven </span>
             </Link>
             <button
               className="navbar-toggler"
