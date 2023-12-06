@@ -37,7 +37,7 @@ export default function WhyUs() {
               </div>
               <div className="detail-box">
                 <h5>Best Quality</h5>
-                <p>We assure you the best of our services at all times</p>
+                <p>We assure you the best of our services</p>
               </div>
             </div>
           </div>
