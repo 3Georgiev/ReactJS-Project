@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import Path from "../../../paths";
+
 export default function OfferListNoResult() {
   return (
     <div className="container">
@@ -14,11 +17,7 @@ export default function OfferListNoResult() {
         </p>
       </div>
       <div className="btn_box">
-        <Link
-          to={Path.OfferCreate}
-          className="view_more-link"
-          onClick={viewMoreHandler}
-        >
+        <Link to={Path.OfferCreate} className="view_more-link">
           Create
         </Link>
       </div>

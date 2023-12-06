@@ -2,8 +2,6 @@ import "./offerList.css";
 import { useEffect, useState } from "react";
 import * as offerService from "../../services/offerService";
 import OfferListItem from "./offer-list-item/OfferListItem";
-import { Link } from "react-router-dom";
-import Path from "../../paths";
 import OfferListNoResult from "./offer-list-noresult/offerListNoResult";
 
 export default function OfferList() {
