@@ -5,6 +5,7 @@ import OfferListItem from "./offer-list-item/OfferListItem";
 
 export default function OfferList() {
   const [offers, setOffers] = useState([]);
+  const [viewMore, setViewMore] = useState(true);
 
   useEffect(() => {
     offerService
@@ -15,6 +16,17 @@ export default function OfferList() {
       });
   }, []);
 
+  const viewMoreHandler = () => {
+    offerService
+      .getAll(viewMore)
+      .then((result) => setOffers(result))
+      .catch((err) => {
+        console.log(err);
+      });
+    setViewMore(false);
+  };
+
+  console.log("render");
   return (
     <section className="product_section layout_padding">
       <div className="container">
@@ -27,9 +39,11 @@ export default function OfferList() {
           ))}
         </div>
         <div className="btn_box">
-          <a href="" className="view_more-link">
-            View More
-          </a>
+          {viewMore && (
+            <button className="view_more-link" onClick={viewMoreHandler}>
+              View All
+            </button>
+          )}
         </div>
       </div>
     </section>

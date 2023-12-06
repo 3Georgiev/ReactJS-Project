@@ -2,12 +2,14 @@ import * as request from "../lib/request";
 
 const baseUrl = "http://localhost:3030/data/offers";
 
-export const getAll = async () => {
-  //Change pagesize to 9 after implement view more
-  const result = await request.get(
-    `${baseUrl}?sortBy=_createdOn%20desc&offset=0&pageSize=25`
-  );
-  return result;
+export const getAll = async (viewmore) => {
+  if (viewmore) {
+    return await request.get(`${baseUrl}?sortBy=_createdOn%20desc`);
+  } else {
+    return await request.get(
+      `${baseUrl}?sortBy=_createdOn%20desc&offset=0&pageSize=9`
+    );
+  }
 };
 
 export const getOne = async (offerId) => {
