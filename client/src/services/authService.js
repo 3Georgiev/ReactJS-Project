@@ -2,16 +2,16 @@ import * as request from "../lib/request";
 
 const baseUrl = "http://localhost:3030/users";
 
-export const login = (email, password) => {
-  const result = request.post(`${baseUrl}/login`, {
+export const login = async (email, password) => {
+  const result = await request.post(`${baseUrl}/login`, {
     email,
     password,
   });
   return result;
 };
 
-export const register = (email, password, username) => {
-  const result = request.post(`${baseUrl}/register`, {
+export const register = async (email, password, username) => {
+  const result = await request.post(`${baseUrl}/register`, {
     email,
     password,
     username,
@@ -19,7 +19,7 @@ export const register = (email, password, username) => {
   return result;
 };
 
-export const logout = () => {
-  const result = request.get(`${baseUrl}/logout`);
+export const logout = async () => {
+  const result = await request.get(`${baseUrl}/logout`);
   return result;
 };
