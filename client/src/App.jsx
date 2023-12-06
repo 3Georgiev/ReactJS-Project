@@ -14,6 +14,7 @@ import NotFound from "./components/notfound/NotFound";
 import OfferCreate from "./components/offer-create/OfferCreate";
 import Logout from "./components/logout/logout";
 import OfferList from "./components/offer-list/OfferList";
+import OfferDetails from "./components/offer-details/OfferDetails";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path={Path.About} element={<About />} />
           <Route path={Path.Offers} element={<OfferList />} />
           <Route path={Path.OfferCreate} element={<OfferCreate />} />
+          <Route path={`/offers/details/:offerId`} element={<OfferDetails />} />
           <Route path={Path.Register} element={<Register />} />
           <Route path={Path.Login} element={<Login />} />
           <Route path={Path.Logout} element={<Logout />} />

@@ -41,7 +41,7 @@
   max-width: 100%;
 }
 
-.product_section .box .img-box .add_cart_btn {
+.product_section .box .img-box .details-btn {
   display: inline-block;
   width: 175px;
   text-align: center;
@@ -60,7 +60,7 @@
   z-index: 3;
 }
 
-.product_section .box .img-box .add_cart_btn:hover {
+.product_section .box .img-box .details-btn:hover {
   background-color: #ff6c00;
   color: #ffffff;
 }
@@ -100,7 +100,7 @@
   justify-content: space-between;
 }
 
-.product_section .box:hover .img-box .add_cart_btn {
+.product_section .box:hover .img-box .details-btn {
   opacity: 1;
   visibility: visible;
 }

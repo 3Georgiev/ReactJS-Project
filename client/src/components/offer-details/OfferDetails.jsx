@@ -1,6 +1,9 @@
+import { useParams } from "react-router-dom";
 import "./offerDetails.css";
 
 export default function OfferDetails() {
+  const { offerId } = useParams();
+
   return (
     <div className="details_container">
       <h2 id="gameTitle">Game Title</h2>

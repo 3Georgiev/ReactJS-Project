@@ -1,13 +1,22 @@
-export default function OfferListItem({ title, price, platform, imageUrl }) {
+import { Link } from "react-router-dom";
+import Path from "../../../paths";
+
+export default function OfferListItem({
+  _id,
+  title,
+  price,
+  platform,
+  imageUrl,
+}) {
   return (
     <>
       <div className="col-sm-6 col-lg-4">
         <div className="box">
           <div className="img-box">
             <img src={imageUrl} alt="" />
-            <a href="" className="add_cart_btn">
-              <span> Add To Cart </span>
-            </a>
+            <Link to={`${Path.Offers}/details/${_id}`} className="details-btn">
+              <span> Details </span>
+            </Link>
           </div>
           <div className="detail-box">
             <h5 className="product_style">{title}</h5>
