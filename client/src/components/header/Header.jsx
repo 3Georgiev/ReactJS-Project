@@ -28,8 +28,10 @@ export default function Header() {
                 <i className="fa fa-search" aria-hidden="true" />
               </button>
             </form>
-            <img src="images/logo.png"></img>
-
+            <Link to={Path.Home}>
+              {" "}
+              <img src="images/logo.png"></img>{" "}
+            </Link>
             <div className="user_option_box">
               {!isAuthenticated ? (
                 <>
