@@ -20,6 +20,9 @@ export default function HomeLatestItem({
             <div className="detail-box">
               <h1>{title}</h1>
               <p>{shortDescriptiopn}</p>
+              <p>
+                <strong>${price}</strong>
+              </p>
               <Link to={`${Path.Offers}/details/${_id}`}> Details </Link>
             </div>
           </div>
