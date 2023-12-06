@@ -1,6 +1,8 @@
 import "./offerCreate.css";
 import useForm from "../../hooks/useForm";
 import * as offerService from "../../services/offerService";
+import { useNavigate } from "react-router-dom";
+import Path from "../../paths";
 
 const CreateFromKeys = {
   Title: "title",
@@ -12,8 +14,11 @@ const CreateFromKeys = {
 };
 
 export default function OfferCreate() {
+  const navigate = useNavigate();
+
   const createSubmitHandler = async () => {
-    const result = await offerService.create(values);
+    await offerService.create(values);
+    navigate(Path.Offers);
   };
 
   const { values, onChange, onSubmit } = useForm(createSubmitHandler, {
@@ -84,11 +89,6 @@ export default function OfferCreate() {
             Create
           </button>
         </div>
-        {/* <div className="offer-create-extra-links">
-          <a href="#">Already have an account?</a>
-          <span>|</span>
-          <a href="#">Login</a>
-        </div> */}
       </form>
     </>
   );
