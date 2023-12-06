@@ -2,9 +2,11 @@ import { useParams } from "react-router-dom";
 import "./offerDetails.css";
 import * as offerService from "../../services/offerService";
 import { useEffect, useState } from "react";
+import OfferDeleteModal from "./offer-delete-modal/offerDeleteModal";
 
 export default function OfferDetails() {
   const [offer, setOffer] = useState({});
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const { offerId } = useParams();
 
@@ -16,6 +18,10 @@ export default function OfferDetails() {
         console.log(err);
       });
   }, [offerId]);
+
+  const showDelete = () => {
+    showDeleteModal ? setShowDeleteModal(false) : setShowDeleteModal(true);
+  };
 
   return (
     <div className="details_container">
@@ -39,23 +45,11 @@ export default function OfferDetails() {
           <button className="buy_btn">Buy</button>
           <div className="edit_delete_btns">
             <button>Edit</button>
-            <button>Delete</button>
+            <button onClick={showDelete}>Delete</button>
           </div>
         </div>
       </div>
-
-      {/* modal test */}
-      <div className="modal">
-        <div className="modal-content">
-          <p>Are you sure you want to delete this offer?</p>
-          <p>This action cannot be undone!</p>
-          <div className="modal-buttons">
-            <button>Cancel</button>
-            <button>Delete</button>
-          </div>
-        </div>
-      </div>
-      {/* modal test */}
+      {showDeleteModal && <OfferDeleteModal showDelete={showDelete} />}
     </div>
   );
 }
