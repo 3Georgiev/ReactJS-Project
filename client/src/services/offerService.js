@@ -2,8 +2,8 @@ import * as request from "../lib/request";
 
 const baseUrl = "http://localhost:3030/data/offers";
 
-export const getAll = async () => {
-  const result = await request.get(baseUrl);
+export const getAll = () => {
+  const result = request.get(baseUrl);
   return result;
 };
 
@@ -28,5 +28,12 @@ export const edit = (offerId, offerData) => {
   const result = request.put(`${baseUrl}/${offerId}`, {
     ...offerData,
   });
+  return result;
+};
+
+export const getLatest = () => {
+  const result = request.get(
+    `${baseUrl}?sortBy=_createdOn%20desc?offset=0&pageSize=3`
+  );
   return result;
 };

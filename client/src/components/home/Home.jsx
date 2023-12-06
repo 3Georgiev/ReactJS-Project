@@ -1,7 +1,21 @@
+import { useEffect, useState } from "react";
 import WhyUs from "../why-us/WhyUs";
 import "./home.css";
+import * as offerService from "../../services/offerService";
+import HomeLatestItem from "./home-latest-item/HomeLatestItem";
 
 export default function Home() {
+  const [offers, setOffers] = useState([]);
+
+  useEffect(() => {
+    offerService
+      .getLatest()
+      .then((result) => setOffers(result))
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       <section className="slider_section">
@@ -12,75 +26,13 @@ export default function Home() {
         >
           <h1 className="latest-offers">Latest Offers</h1>
           <div className="carousel-inner">
-            <div className="carousel-item active">
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="detail-box">
-                      <h1>Product Name</h1>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Iste quam velit saepe dolorem deserunt quo quidem
-                        ad optio.
-                      </p>
-                      <a href=""> Read More </a>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="img-box">
-                      <img
-                        src="https://images.kinguin.net/g/carousel-main/media/images/products/654b5a93e388f5510078dd7a_28fc58afdbd72ba8809ada96b3d1c6af.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="detail-box">
-                      <h1>Product Name</h1>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Iste quam velit saepe dolorem deserunt quo quidem
-                        ad optio.
-                      </p>
-                      <a href=""> Read More </a>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="img-box">
-                      <img src="images/slider-img.png" alt="" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="detail-box">
-                      <h1>Product Name</h1>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Iste quam velit saepe dolorem deserunt quo quidem
-                        ad optio.
-                      </p>
-                      <a href=""> Read More </a>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="img-box">
-                      <img src="images/slider-img.png" alt="" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {offers.map((offer) => (
+              <HomeLatestItem
+                key={offer._id}
+                {...offer}
+                index={offers.indexOf(offer)}
+              />
+            ))}
             <div className="carousel_btn_box">
               <a
                 className="carousel-control-prev"
