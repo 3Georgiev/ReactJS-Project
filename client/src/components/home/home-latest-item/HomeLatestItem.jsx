@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Path from "../../../paths";
-import { useEffect } from "react";
 
 export default function HomeLatestItem({
   _id,
