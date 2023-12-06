@@ -1465,7 +1465,7 @@
         title: "Cyberpunk 2077 Ultimate Edition GOG CD Key",
         price: 41.14,
         region: "Global",
-        platform: Gog,
+        platform: "Gog",
         imageUrl:
           "https://cdn1.epicgames.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7",
         description:
@@ -1478,7 +1478,7 @@
         title: "Age of Empires II: Definitive Edition Steam CD Key EU",
         price: 6.99,
         region: "Europe",
-        platform: Steam,
+        platform: "Steam",
         imageUrl:
           "https://cdn.cloudflare.steamstatic.com/steam/apps/813780/capsule_616x353.jpg?t=1699054682",
         description:
