@@ -42,7 +42,6 @@ export default function OfferDetails() {
     commentService.create(offerId, values).then((result) => {
       setComments((state) => [...state, result]);
     });
-    values.content = "test";
   };
 
   const { values, onChange, onSubmit } = useForm(commentSubmitHandler, {
@@ -111,11 +110,13 @@ export default function OfferDetails() {
         {isAuthenticated && (
           <form className="add_comment" onSubmit={onSubmit}>
             <textarea
+              type="text"
               placeholder="Add your comment..."
-              value={values.value}
               onChange={onChange}
               name="content"
+              value={values.content}
             />
+
             <button>Add Comment</button>
           </form>
         )}
