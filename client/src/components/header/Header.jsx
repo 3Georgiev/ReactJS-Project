@@ -1,13 +1,22 @@
-import { Link, useLocation } from "react-router-dom";
-import Path from "../../paths";
 import "./header.css";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../../context/authContext";
+import Path from "../../paths";
+import useForm from "../../hooks/useForm";
 
 export default function Header() {
   const location = useLocation();
-
+  const navigate = useNavigate();
   const { isAuthenticated, username } = useContext(AuthContext);
+
+  const searchFormHadnler = (value) => {
+    navigate(`${Path.Search}?query=${value.search}`);
+    values.search = "";
+  };
+  const { values, onChange, onSubmit } = useForm(searchFormHadnler, {
+    search: "",
+  });
 
   const isActive = (targetPath) => {
     return targetPath === location.pathname ? "active" : "";
@@ -18,12 +27,16 @@ export default function Header() {
       <div className="header_top">
         <div className="container-fluid">
           <div className="top_nav_container">
-            <form className="search_form">
+            <form className="search_form" onSubmit={onSubmit}>
               <input
                 type="text"
                 className="form-control"
                 placeholder="What are you looking for?"
+                onChange={onChange}
+                name="search"
+                value={values.search}
               />
+
               <button>
                 <i className="fa fa-search" aria-hidden="true" />
               </button>

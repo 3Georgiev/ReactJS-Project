@@ -7,6 +7,7 @@ const Path = {
   Offers: "/offers",
   OfferCreate: "/offers/create",
   Logout: "/logout",
+  Search: "/search",
 };
 
 export default Path;

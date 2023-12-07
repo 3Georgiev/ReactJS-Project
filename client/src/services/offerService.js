@@ -43,3 +43,11 @@ export const getLatest = async () => {
 
   return result;
 };
+
+export const search = async (searchQuery) => {
+  const result = await await request.get(
+    `${baseUrl}?where=title LIKE %22${searchQuery}%22`
+  );
+
+  return result;
+};

@@ -16,7 +16,7 @@ const CreateFromKeys = {
 export default function OfferCreate() {
   const navigate = useNavigate();
 
-  const createSubmitHandler = async () => {
+  const createSubmitHandler = async (values) => {
     await offerService.create(values);
     navigate(Path.Offers);
   };
