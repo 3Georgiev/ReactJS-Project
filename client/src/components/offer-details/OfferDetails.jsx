@@ -109,6 +109,7 @@ export default function OfferDetails() {
           <CommentItem
             key={comment._id}
             {...comment}
+            userId={userId}
             username={comment.ownerUsername}
           />
         ))}

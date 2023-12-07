@@ -1,9 +1,10 @@
-export default function CommentItem({ content, username }) {
+export default function CommentItem({ content, username, userId, _ownerId }) {
+  const isOwner = userId === _ownerId;
   return (
     <>
       <div className="comment">
         <strong>{username}</strong> {content}
-        <button>Delete</button>
+        {isOwner && <button>Delete</button>}
       </div>
     </>
   );
