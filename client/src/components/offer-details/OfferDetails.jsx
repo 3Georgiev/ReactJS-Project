@@ -51,7 +51,7 @@ export default function OfferDetails() {
 
             {isOwner && (
               <div className="edit_delete_btns">
-                <Link to={`${Path.Offers}/edit/${offerId}`}>
+                <Link to={`${Path.Offers}/${offerId}/edit`}>
                   <button>Edit</button>
                 </Link>
                 <button onClick={showDelete}>Delete</button>

@@ -27,8 +27,8 @@ function App() {
           <Route path={Path.About} element={<About />} />
           <Route path={Path.Offers} element={<OfferList />} />
           <Route path={Path.OfferCreate} element={<OfferCreate />} />
-          <Route path={`/offers/details/:offerId`} element={<OfferDetails />} />
-          <Route path={`/offers/edit/:offerId`} element={<OfferEdit />} />
+          <Route path={`/offers/:offerId/details`} element={<OfferDetails />} />
+          <Route path={`/offers/:offerId/edit`} element={<OfferEdit />} />
           <Route path={Path.Register} element={<Register />} />
           <Route path={Path.Login} element={<Login />} />
           <Route path={Path.Logout} element={<Logout />} />

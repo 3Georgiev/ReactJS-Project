@@ -22,7 +22,7 @@ export default function HomeLatestItem({
               <p>
                 <strong>${price}</strong>
               </p>
-              <Link to={`${Path.Offers}/details/${_id}`}> Details </Link>
+              <Link to={`${Path.Offers}/${_id}/details`}> Details </Link>
             </div>
           </div>
           <div className="col-md-6">

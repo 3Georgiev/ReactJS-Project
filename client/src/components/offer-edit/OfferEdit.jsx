@@ -14,7 +14,14 @@ const EditFromKeys = {
 };
 
 export default function OfferEdit() {
-  const [offer, setOffer] = useState({});
+  const [offer, setOffer] = useState({
+    [EditFromKeys.Title]: "",
+    [EditFromKeys.Price]: 0,
+    [EditFromKeys.Region]: "",
+    [EditFromKeys.Platform]: "",
+    [EditFromKeys.ImageUrl]: "",
+    [EditFromKeys.Description]: "",
+  });
   const { offerId } = useParams();
   const navigate = useNavigate();
 
@@ -30,7 +37,7 @@ export default function OfferEdit() {
     offerService.edit(offerId, {
       ...offer,
     });
-    navigate(`${Path.Offers}/details/${offerId}`);
+    navigate(`${Path.Offers}/${offerId}/details`);
   };
 
   const onChange = (e) => {
@@ -95,7 +102,7 @@ export default function OfferEdit() {
           value={offer[EditFromKeys.Description]}
         ></textarea>
         <div>
-          <Link to={`${Path.Offers}/details/${offerId}`}>
+          <Link to={`${Path.Offers}/${offerId}/details`}>
             <button className="offer-edit-form-btn">Back</button>
           </Link>
           <button className="offer-edit-form-btn" type="submit">

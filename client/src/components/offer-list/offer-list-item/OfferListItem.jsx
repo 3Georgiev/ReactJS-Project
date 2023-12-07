@@ -14,7 +14,7 @@ export default function OfferListItem({
         <div className="box">
           <div className="img-box">
             <img src={imageUrl} alt="" />
-            <Link to={`${Path.Offers}/details/${_id}`} className="details-btn">
+            <Link to={`${Path.Offers}/${_id}/details`} className="details-btn">
               <span> Details </span>
             </Link>
           </div>
