@@ -38,7 +38,7 @@ export default function OfferDetails() {
     showDeleteModal ? setShowDeleteModal(false) : setShowDeleteModal(true);
   };
 
-  const commentSubmitHandler = async (values) => {
+  const commentSubmitHandler = (values) => {
     commentService
       .create(offerId, { ...values, ownerUsername: username })
       .then((result) => {
@@ -49,6 +49,13 @@ export default function OfferDetails() {
   const { values, onChange, onSubmit } = useForm(commentSubmitHandler, {
     content: "",
   });
+
+  const deleteCommentHandler = async (commentId) => {
+    await commentService.remove(commentId);
+    setComments((state) =>
+      state.filter((comment) => comment._id !== commentId)
+    );
+  };
 
   return (
     <div className="details_container">
@@ -111,6 +118,7 @@ export default function OfferDetails() {
             {...comment}
             userId={userId}
             username={comment.ownerUsername}
+            deleteCommentHandler={deleteCommentHandler}
           />
         ))}
 
