@@ -1,8 +1,8 @@
 import "./offerEdit.css";
-import useForm from "../../hooks/useForm";
 import * as offerService from "../../services/offerService";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Path from "../../paths";
+import { useEffect, useState } from "react";
 
 const EditFromKeys = {
   Title: "title",
@@ -14,25 +14,35 @@ const EditFromKeys = {
 };
 
 export default function OfferEdit() {
+  const [offer, setOffer] = useState({});
+  const { offerId } = useParams();
   const navigate = useNavigate();
 
-  const editSubmitHandler = async () => {
-    await offerService.put(values);
-    navigate(Path.Offers);
+  useEffect(() => {
+    offerService
+      .getOne(offerId)
+      .then((result) => setOffer(result))
+      .catch((err) => console.log(err));
+  }, [offerId]);
+
+  const editSubmitHandler = (e) => {
+    e.preventDefault();
+    offerService.edit(offerId, {
+      ...offer,
+    });
+    navigate(`${Path.Offers}/details/${offerId}`);
   };
 
-  const { values, onChange, onSubmit } = useForm(editSubmitHandler, {
-    [EditFromKeys.Title]: "",
-    [EditFromKeys.Price]: "",
-    [EditFromKeys.Region]: "",
-    [EditFromKeys.Platform]: "",
-    [EditFromKeys.ImageUrl]: "",
-    [EditFromKeys.Description]: "",
-  });
+  const onChange = (e) => {
+    setOffer((state) => ({
+      ...state,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   return (
     <>
-      <form className="container" onSubmit={onSubmit}>
+      <form className="container" onSubmit={editSubmitHandler}>
         <h2>Making changes</h2>
         <label htmlFor="username">Game Title</label>
         <input
@@ -41,7 +51,7 @@ export default function OfferEdit() {
           type="text"
           id="title"
           name={EditFromKeys.Title}
-          value={values[EditFromKeys.Title]}
+          value={offer[EditFromKeys.Title]}
         />
         <label htmlFor="email">Price</label>
         <input
@@ -49,7 +59,7 @@ export default function OfferEdit() {
           onChange={onChange}
           type="number"
           name={EditFromKeys.Price}
-          value={values[EditFromKeys.Price]}
+          value={offer[EditFromKeys.Price]}
         />
         <label htmlFor="password">Regional Limitation</label>
         <input
@@ -57,7 +67,7 @@ export default function OfferEdit() {
           onChange={onChange}
           type="text"
           name={EditFromKeys.Region}
-          value={values[EditFromKeys.Region]}
+          value={offer[EditFromKeys.Region]}
         />
 
         <label htmlFor="confirm-password">Platform</label>
@@ -66,7 +76,7 @@ export default function OfferEdit() {
           onChange={onChange}
           type="text"
           name={EditFromKeys.Platform}
-          value={values[EditFromKeys.Platform]}
+          value={offer[EditFromKeys.Platform]}
         />
         <label htmlFor="confirm-password">Image Url</label>
         <input
@@ -74,7 +84,7 @@ export default function OfferEdit() {
           onChange={onChange}
           type="text"
           name={EditFromKeys.ImageUrl}
-          value={values[EditFromKeys.ImageUrl]}
+          value={offer[EditFromKeys.ImageUrl]}
         />
         <label htmlFor="confirm-password">Description</label>
         <textarea
@@ -82,12 +92,12 @@ export default function OfferEdit() {
           onChange={onChange}
           type="text"
           name={EditFromKeys.Description}
-          value={values[EditFromKeys.Description]}
+          value={offer[EditFromKeys.Description]}
         ></textarea>
         <div>
-          <button className="offer-edit-form-btn" type="submit">
-            Back
-          </button>
+          <Link to={`${Path.Offers}/details/${offerId}`}>
+            <button className="offer-edit-form-btn">Back</button>
+          </Link>
           <button className="offer-edit-form-btn" type="submit">
             Edit
           </button>
