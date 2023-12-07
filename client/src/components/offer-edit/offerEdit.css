@@ -1,0 +1,53 @@
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #212529;
+}
+
+.offer-edit-form-input {
+  width: 40%;
+  padding: 12px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.offer-edit-form-description {
+  width: 40%;
+  height: 200px;
+  padding: 12px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.offer-edit-form-btn {
+  background-color: #ff6c00;
+  color: #ffffff;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.offer-edit-form-btn:hover {
+  background-color: #ce5600;
+}
+.offer-edit-extra-links {
+  margin-top: 20px;
+}
+
+.offer-edit-extra-links a {
+  color: #212529;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+.offer-edit-extra-links :hover {
+  text-decoration: underline;
+}
