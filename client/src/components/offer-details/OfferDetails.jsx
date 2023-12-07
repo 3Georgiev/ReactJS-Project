@@ -3,14 +3,18 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import AuthContext from "../../context/authContext";
 import * as offerService from "../../services/offerService";
+import * as commentService from "../../services/commentService";
 import Path from "../../paths";
 import OfferDeleteModal from "./offer-delete-modal/offerDeleteModal";
+import useForm from "../../hooks/useForm";
+import CommentItem from "./comment-item/CommentItem";
 
 export default function OfferDetails() {
   const [offer, setOffer] = useState({});
+  const [comments, setComments] = useState([]);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  const { isAuthenticated, userId } = useContext(AuthContext);
+  const { isAuthenticated, userId, username } = useContext(AuthContext);
   const { offerId } = useParams();
   const isOwner = userId === offer._ownerId;
 
@@ -21,11 +25,29 @@ export default function OfferDetails() {
       .catch((err) => {
         console.log(err);
       });
+
+    commentService
+      .getAll()
+      .then((result) => setComments(result))
+      .catch((err) => {
+        console.log(err);
+      });
   }, [offerId]);
 
   const showDelete = () => {
     showDeleteModal ? setShowDeleteModal(false) : setShowDeleteModal(true);
   };
+
+  const commentSubmitHandler = (values) => {
+    commentService.create(offerId, values).then((result) => {
+      setComments((state) => [...state, result]);
+    });
+    values.content = "test";
+  };
+
+  const { values, onChange, onSubmit } = useForm(commentSubmitHandler, {
+    content: "",
+  });
 
   return (
     <div className="details_container">
@@ -81,24 +103,21 @@ export default function OfferDetails() {
 
       <div className="comment_section_container">
         <h3>Comments</h3>
-        <div className="comment">
-          <strong>Test</strong> Test Test Test Test Test Test Test Test Test
-          Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-          Test Test Test Test Test Test Test Test Test Test Test
-          <button>Delete</button>
-        </div>
-        <div className="comment">
-          <strong>Test</strong> Test Test Test Test Test Test Test Test Test
-          Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-          Test Test Test Test Test Test Test Test Test Test Test
-          <button>Delete</button>
-        </div>
+
+        {comments.map((comment) => (
+          <CommentItem key={comment._id} {...comment} username={username} />
+        ))}
 
         {isAuthenticated && (
-          <div className="add_comment">
-            <textarea placeholder="Add your comment..." value="test" />
+          <form className="add_comment" onSubmit={onSubmit}>
+            <textarea
+              placeholder="Add your comment..."
+              value={values.value}
+              onChange={onChange}
+              name="content"
+            />
             <button>Add Comment</button>
-          </div>
+          </form>
         )}
       </div>
     </div>
