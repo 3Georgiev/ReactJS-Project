@@ -27,7 +27,7 @@ export default function OfferDetails() {
       });
 
     commentService
-      .getAll()
+      .getAll(offerId)
       .then((result) => setComments(result))
       .catch((err) => {
         console.log(err);
@@ -38,10 +38,12 @@ export default function OfferDetails() {
     showDeleteModal ? setShowDeleteModal(false) : setShowDeleteModal(true);
   };
 
-  const commentSubmitHandler = (values) => {
-    commentService.create(offerId, values).then((result) => {
-      setComments((state) => [...state, result]);
-    });
+  const commentSubmitHandler = async (values) => {
+    commentService
+      .create(offerId, { ...values, ownerUsername: username })
+      .then((result) => {
+        setComments((state) => [...state, result]);
+      });
   };
 
   const { values, onChange, onSubmit } = useForm(commentSubmitHandler, {
@@ -104,7 +106,11 @@ export default function OfferDetails() {
         <h3>Comments</h3>
 
         {comments.map((comment) => (
-          <CommentItem key={comment._id} {...comment} username={username} />
+          <CommentItem
+            key={comment._id}
+            {...comment}
+            username={comment.ownerUsername}
+          />
         ))}
 
         {isAuthenticated && (

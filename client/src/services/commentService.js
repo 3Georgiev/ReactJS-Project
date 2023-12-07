@@ -2,8 +2,8 @@ import * as request from "../lib/request";
 
 const baseUrl = "http://localhost:3030/data/comments";
 
-export const getAll = async () => {
-  return await request.get(`${baseUrl}`);
+export const getAll = async (offerId) => {
+  return await request.get(`${baseUrl}?where=offerId%3D%22${offerId}%22`);
 };
 export const create = async (offerId, commentData) => {
   const result = await request.post(baseUrl, {
