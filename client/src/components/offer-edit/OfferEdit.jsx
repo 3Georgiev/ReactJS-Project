@@ -1,8 +1,8 @@
 import "./offerEdit.css";
-import * as offerService from "../../services/offerService";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import Path from "../../paths";
 import { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import * as offerService from "../../services/offerService";
+import Path from "../../paths";
 
 const EditFromKeys = {
   Title: "title",

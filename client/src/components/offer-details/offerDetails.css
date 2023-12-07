@@ -131,3 +131,18 @@
 .modal-buttons button:hover {
   background-color: #0056b3;
 }
+
+.details-extra-links {
+  margin-top: 20px;
+}
+
+.details-extra-links a {
+  color: #ff6c00;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+.details-extra-links :hover {
+  text-decoration: underline;
+}

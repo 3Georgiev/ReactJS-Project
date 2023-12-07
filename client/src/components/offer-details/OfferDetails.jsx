@@ -1,14 +1,16 @@
-import { Link, useParams } from "react-router-dom";
 import "./offerDetails.css";
+import { useContext, useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import AuthContext from "../../context/authContext";
 import * as offerService from "../../services/offerService";
-import { useEffect, useState } from "react";
-import OfferDeleteModal from "./offer-delete-modal/offerDeleteModal";
 import Path from "../../paths";
+import OfferDeleteModal from "./offer-delete-modal/offerDeleteModal";
 
 export default function OfferDetails() {
   const [offer, setOffer] = useState({});
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
+  const { isAuthenticated } = useContext(AuthContext);
   const { offerId } = useParams();
 
   useEffect(() => {
@@ -42,15 +44,27 @@ export default function OfferDetails() {
         <p>
           <strong>Platform:</strong> {offer.platform}
         </p>
-        <div className="button_container">
-          <button className="buy_btn">Buy</button>
-          <div className="edit_delete_btns">
-            <Link to={`${Path.Offers}/edit/${offerId}`}>
-              <button>Edit</button>
-            </Link>
-            <button onClick={showDelete}>Delete</button>
+        {isAuthenticated && (
+          <div className="button_container">
+            <button className="buy_btn">Buy</button>
+
+            <div className="edit_delete_btns">
+              <Link to={`${Path.Offers}/edit/${offerId}`}>
+                <button>Edit</button>
+              </Link>
+              <button onClick={showDelete}>Delete</button>
+            </div>
           </div>
-        </div>
+        )}
+        {!isAuthenticated && (
+          <div className="details-extra-links">
+            <Link to={Path.Login}>
+              To make a purchase you must have an account!
+            </Link>
+            <span>|</span>
+            <Link to={Path.Login}>Login</Link>
+          </div>
+        )}
       </div>
       {showDeleteModal && (
         <OfferDeleteModal
