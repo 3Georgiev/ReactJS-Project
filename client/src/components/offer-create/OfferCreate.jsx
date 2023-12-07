@@ -26,7 +26,7 @@ export default function OfferCreate() {
 
   const { values, onChange, onSubmit } = useForm(createSubmitHandler, {
     [CreateFromKeys.Title]: "",
-    [CreateFromKeys.Price]: "",
+    [CreateFromKeys.Price]: 0,
     [CreateFromKeys.Region]: "",
     [CreateFromKeys.Platform]: "",
     [CreateFromKeys.ImageUrl]: "",
@@ -45,6 +45,7 @@ export default function OfferCreate() {
         <label htmlFor="username">Game Title</label>
         <input
           className="offer-create-form-input"
+          placeholder="Example Title..."
           onChange={onChange}
           type="text"
           id="title"
@@ -62,6 +63,7 @@ export default function OfferCreate() {
         <label htmlFor="password">Regional Limitation</label>
         <input
           className="offer-create-form-input"
+          placeholder="Europe/Global..."
           onChange={onChange}
           type="text"
           name={CreateFromKeys.Region}
@@ -71,6 +73,7 @@ export default function OfferCreate() {
         <label htmlFor="confirm-password">Platform</label>
         <input
           className="offer-create-form-input"
+          placeholder="Steam/Origin/Xbox..."
           onChange={onChange}
           type="text"
           name={CreateFromKeys.Platform}
@@ -79,6 +82,7 @@ export default function OfferCreate() {
         <label htmlFor="confirm-password">Image Url</label>
         <input
           className="offer-create-form-input"
+          placeholder="https://example/example.jpg..."
           onChange={onChange}
           type="text"
           name={CreateFromKeys.ImageUrl}
@@ -87,6 +91,7 @@ export default function OfferCreate() {
         <label htmlFor="confirm-password">Description</label>
         <textarea
           className="offer-create-form-description"
+          placeholder="Game summary..."
           onChange={onChange}
           type="text"
           name={CreateFromKeys.Description}

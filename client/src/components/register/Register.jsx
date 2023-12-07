@@ -29,6 +29,7 @@ export default function Register() {
         <label htmlFor="username">Username</label>
         <input
           className="register-form-input"
+          placeholder="Username..."
           type="text"
           id="username"
           name={RegisterFormKeys.Username}
@@ -38,6 +39,7 @@ export default function Register() {
         <label htmlFor="email">Email</label>
         <input
           className="register-form-input"
+          placeholder="example@gamehaven.com"
           type="email"
           id="email"
           name={RegisterFormKeys.Email}
@@ -47,6 +49,7 @@ export default function Register() {
         <label htmlFor="password">Password</label>
         <input
           className="register-form-input"
+          placeholder="Password..."
           autoComplete="on"
           type="password"
           id="password"
@@ -58,6 +61,7 @@ export default function Register() {
         <label htmlFor="confirm-password">Confirm password</label>
         <input
           className="register-form-input"
+          placeholder="Confirm Password..."
           autoComplete="on"
           type="password"
           id="confirm-password"

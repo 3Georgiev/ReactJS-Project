@@ -24,6 +24,7 @@ export default function Login() {
         <label htmlFor="email">Email</label>
         <input
           className="login-form-input"
+          placeholder="Your email..."
           type="email"
           id="email"
           name={LoginFormKeys.Email}
@@ -33,6 +34,7 @@ export default function Login() {
         <label htmlFor="password">Password</label>
         <input
           className="login-form-input"
+          placeholder="Your password..."
           autoComplete="on"
           type="password"
           id="password"
