@@ -112,15 +112,19 @@ export default function OfferDetails() {
       <div className="comment_section_container">
         <h3>Comments</h3>
 
-        {comments.map((comment) => (
-          <CommentItem
-            key={comment._id}
-            {...comment}
-            userId={userId}
-            username={comment.ownerUsername}
-            deleteCommentHandler={deleteCommentHandler}
-          />
-        ))}
+        {comments.length > 0 ? (
+          comments.map((comment) => (
+            <CommentItem
+              key={comment._id}
+              {...comment}
+              userId={userId}
+              username={comment.ownerUsername}
+              deleteCommentHandler={deleteCommentHandler}
+            />
+          ))
+        ) : (
+          <p style={{}}>Be the first one to comment!</p>
+        )}
 
         {isAuthenticated && (
           <form className="add_comment" onSubmit={onSubmit}>
