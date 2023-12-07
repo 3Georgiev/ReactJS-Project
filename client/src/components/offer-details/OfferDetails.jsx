@@ -76,6 +76,31 @@ export default function OfferDetails() {
           title={offer.title}
         />
       )}
+
+      {/* Comment Section */}
+
+      <div className="comment_section_container">
+        <h3>Comments</h3>
+        <div className="comment">
+          <strong>Test</strong> Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test
+          <button>Delete</button>
+        </div>
+        <div className="comment">
+          <strong>Test</strong> Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test
+          <button>Delete</button>
+        </div>
+
+        {isAuthenticated && (
+          <div className="add_comment">
+            <textarea placeholder="Add your comment..." value="test" />
+            <button>Add Comment</button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
