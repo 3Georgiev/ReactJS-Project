@@ -10,8 +10,9 @@ export default function OfferDetails() {
   const [offer, setOffer] = useState({});
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, userId } = useContext(AuthContext);
   const { offerId } = useParams();
+  const isOwner = userId === offer._ownerId;
 
   useEffect(() => {
     offerService
@@ -46,14 +47,16 @@ export default function OfferDetails() {
         </p>
         {isAuthenticated && (
           <div className="button_container">
-            <button className="buy_btn">Buy</button>
+            {!isOwner && <button className="buy_btn">Buy</button>}
 
-            <div className="edit_delete_btns">
-              <Link to={`${Path.Offers}/edit/${offerId}`}>
-                <button>Edit</button>
-              </Link>
-              <button onClick={showDelete}>Delete</button>
-            </div>
+            {isOwner && (
+              <div className="edit_delete_btns">
+                <Link to={`${Path.Offers}/edit/${offerId}`}>
+                  <button>Edit</button>
+                </Link>
+                <button onClick={showDelete}>Delete</button>
+              </div>
+            )}
           </div>
         )}
         {!isAuthenticated && (
