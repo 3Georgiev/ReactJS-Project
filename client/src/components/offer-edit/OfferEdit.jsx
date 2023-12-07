@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import * as offerService from "../../services/offerService";
 import Path from "../../paths";
+import Modal from "../modal/Modal";
 
 const EditFromKeys = {
   Title: "title",
@@ -14,6 +15,7 @@ const EditFromKeys = {
 };
 
 export default function OfferEdit() {
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [offer, setOffer] = useState({
     [EditFromKeys.Title]: "",
     [EditFromKeys.Price]: 0,
@@ -22,6 +24,7 @@ export default function OfferEdit() {
     [EditFromKeys.ImageUrl]: "",
     [EditFromKeys.Description]: "",
   });
+
   const { offerId } = useParams();
   const navigate = useNavigate();
 
@@ -47,9 +50,14 @@ export default function OfferEdit() {
     }));
   };
 
+  const showDelete = (e) => {
+    e.preventDefault();
+    showDeleteModal ? setShowDeleteModal(false) : setShowDeleteModal(true);
+  };
+
   return (
     <>
-      <form className="container" onSubmit={editSubmitHandler}>
+      <form className="container" onSubmit={showDelete}>
         <h2>Making changes</h2>
         <label htmlFor="username">Game Title</label>
         <input
@@ -109,6 +117,14 @@ export default function OfferEdit() {
             Edit
           </button>
         </div>
+        {showDeleteModal && (
+          <Modal
+            showDelete={showDelete}
+            submitHandler={editSubmitHandler}
+            title={offer.title}
+            text={"Are you sure you want to edit this offer?"}
+          />
+        )}
       </form>
     </>
   );

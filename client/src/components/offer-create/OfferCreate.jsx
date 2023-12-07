@@ -1,8 +1,10 @@
 import "./offerCreate.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import * as offerService from "../../services/offerService";
-import { useNavigate } from "react-router-dom";
 import Path from "../../paths";
+import Modal from "../modal/Modal";
 
 const CreateFromKeys = {
   Title: "title",
@@ -14,6 +16,7 @@ const CreateFromKeys = {
 };
 
 export default function OfferCreate() {
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const navigate = useNavigate();
 
   const createSubmitHandler = async (values) => {
@@ -30,9 +33,14 @@ export default function OfferCreate() {
     [CreateFromKeys.Description]: "",
   });
 
+  const showDelete = (e) => {
+    e.preventDefault();
+    showDeleteModal ? setShowDeleteModal(false) : setShowDeleteModal(true);
+  };
+
   return (
     <>
-      <form className="container" onSubmit={onSubmit}>
+      <form className="container" onSubmit={showDelete}>
         <h2>Create an offer!</h2>
         <label htmlFor="username">Game Title</label>
         <input
@@ -89,6 +97,14 @@ export default function OfferCreate() {
             Create
           </button>
         </div>
+        {showDeleteModal && (
+          <Modal
+            showDelete={showDelete}
+            submitHandler={onSubmit}
+            title={values.title}
+            text={"Are you sure you want to create this offer?"}
+          />
+        )}
       </form>
     </>
   );

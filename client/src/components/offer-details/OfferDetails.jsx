@@ -1,13 +1,13 @@
 import "./offerDetails.css";
 import { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import AuthContext from "../../context/authContext";
 import * as offerService from "../../services/offerService";
 import * as commentService from "../../services/commentService";
 import Path from "../../paths";
-import OfferDeleteModal from "./offer-delete-modal/offerDeleteModal";
 import useForm from "../../hooks/useForm";
 import CommentItem from "./comment-item/CommentItem";
+import Modal from "../modal/Modal";
 
 export default function OfferDetails() {
   const [offer, setOffer] = useState({});
@@ -15,6 +15,7 @@ export default function OfferDetails() {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const { isAuthenticated, userId, username } = useContext(AuthContext);
+  const navigate = useNavigate();
   const { offerId } = useParams();
   const isOwner = userId === offer._ownerId;
 
@@ -33,6 +34,11 @@ export default function OfferDetails() {
         console.log(err);
       });
   }, [offerId]);
+
+  const offerDeleteBtnHandler = () => {
+    offerService.remove(offerId);
+    navigate(Path.Offers);
+  };
 
   const showDelete = () => {
     showDeleteModal ? setShowDeleteModal(false) : setShowDeleteModal(true);
@@ -99,11 +105,13 @@ export default function OfferDetails() {
           </div>
         )}
       </div>
+
       {showDeleteModal && (
-        <OfferDeleteModal
+        <Modal
           showDelete={showDelete}
-          offerId={offerId}
+          submitHandler={offerDeleteBtnHandler}
           title={offer.title}
+          text={"Are you sure you want to delete this offer?"}
         />
       )}
 
