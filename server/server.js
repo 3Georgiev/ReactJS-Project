@@ -1568,8 +1568,9 @@
     comments: {
       "0a272c58-b7ea-4e09-a000-7ec988248f66": {
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        ownerUsername: "Peter",
         content: "Great game",
-        offerId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
+        offerId: "b811790b-7581-4a6f-8d47-40e2b6f59596",
         _createdOn: 1614260681375,
         _id: "0a272c58-b7ea-4e09-a000-7ec988248f66",
       },

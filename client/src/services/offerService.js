@@ -37,7 +37,7 @@ export const edit = async (offerId, offerData) => {
 };
 
 export const getLatest = async () => {
-  const result = await await request.get(
+  const result = await request.get(
     `${baseUrl}?sortBy=_createdOn%20desc&offset=0&pageSize=3`
   );
 
@@ -45,7 +45,7 @@ export const getLatest = async () => {
 };
 
 export const search = async (searchQuery) => {
-  const result = await await request.get(
+  const result = await request.get(
     `${baseUrl}?where=title LIKE %22${searchQuery}%22`
   );
 

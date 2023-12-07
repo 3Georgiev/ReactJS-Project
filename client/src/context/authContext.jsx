@@ -34,13 +34,11 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem("accessToken", result.accessToken);
 
     navigate(Path.Home);
-    console.log(result);
   };
 
   const logoutHandler = async () => {
-    await authService.logout();
-    setAuth({});
     localStorage.removeItem("accessToken");
+    setAuth({});
   };
 
   const values = {

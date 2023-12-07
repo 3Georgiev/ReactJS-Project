@@ -9,7 +9,6 @@ const buildOptions = (data) => {
   }
 
   const token = localStorage.getItem("accessToken");
-
   if (token) {
     options.headers = {
       ...options.headers,
