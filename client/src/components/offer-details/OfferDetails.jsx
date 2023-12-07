@@ -1,8 +1,9 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./offerDetails.css";
 import * as offerService from "../../services/offerService";
 import { useEffect, useState } from "react";
 import OfferDeleteModal from "./offer-delete-modal/offerDeleteModal";
+import Path from "../../paths";
 
 export default function OfferDetails() {
   const [offer, setOffer] = useState({});
@@ -44,7 +45,9 @@ export default function OfferDetails() {
         <div className="button_container">
           <button className="buy_btn">Buy</button>
           <div className="edit_delete_btns">
-            <button>Edit</button>
+            <Link to={`${Path.Offers}/edit/${offerId}`}>
+              <button>Edit</button>
+            </Link>
             <button onClick={showDelete}>Delete</button>
           </div>
         </div>

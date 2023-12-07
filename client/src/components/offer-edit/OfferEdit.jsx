@@ -33,7 +33,7 @@ export default function OfferEdit() {
   return (
     <>
       <form className="container" onSubmit={onSubmit}>
-        <h2>Editing the offer...</h2>
+        <h2>Making changes</h2>
         <label htmlFor="username">Game Title</label>
         <input
           className="offer-edit-form-input"
@@ -85,6 +85,9 @@ export default function OfferEdit() {
           value={values[EditFromKeys.Description]}
         ></textarea>
         <div>
+          <button className="offer-edit-form-btn" type="submit">
+            Back
+          </button>
           <button className="offer-edit-form-btn" type="submit">
             Edit
           </button>

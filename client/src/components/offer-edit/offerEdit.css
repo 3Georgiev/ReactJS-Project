@@ -32,6 +32,8 @@ label {
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .offer-edit-form-btn:hover {
