@@ -1569,10 +1569,18 @@
       "0a272c58-b7ea-4e09-a000-7ec988248f66": {
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
         ownerUsername: "Peter",
-        content: "Great game",
+        content: "Great game!",
         offerId: "b811790b-7581-4a6f-8d47-40e2b6f59596",
         _createdOn: 1614260681375,
         _id: "0a272c58-b7ea-4e09-a000-7ec988248f66",
+      },
+      "1b272c58-a7ea-4e09-a000-7ec988248f66": {
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        ownerUsername: "George",
+        content: "Damn... Thats expensive!",
+        offerId: "b811790b-7581-4a6f-8d47-40e2b6f59596",
+        _createdOn: 1614260681378,
+        _id: "1b272c58-a7ea-4e09-a000-7ec988248f66",
       },
     },
   };

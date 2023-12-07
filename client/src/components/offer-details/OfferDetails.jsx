@@ -123,7 +123,7 @@ export default function OfferDetails() {
             />
           ))
         ) : (
-          <p style={{}}>Be the first one to comment!</p>
+          <p style={{ color: "#ce5600" }}>No comments here :(</p>
         )}
 
         {isAuthenticated && (
