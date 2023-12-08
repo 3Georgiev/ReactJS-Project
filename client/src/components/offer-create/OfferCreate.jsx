@@ -16,10 +16,14 @@ const CreateFromKeys = {
 };
 
 export default function OfferCreate() {
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showCreateModal, setShowCreateModal] = useState(false);
   const navigate = useNavigate();
 
   const createSubmitHandler = async (values) => {
+    if (values.price < 5) {
+      console.log("error");
+      return;
+    }
     await offerService.create(values);
     navigate(Path.Offers);
   };
@@ -33,14 +37,14 @@ export default function OfferCreate() {
     [CreateFromKeys.Description]: "",
   });
 
-  const showDelete = (e) => {
+  const showCreate = (e) => {
     e.preventDefault();
-    showDeleteModal ? setShowDeleteModal(false) : setShowDeleteModal(true);
+    showCreateModal ? setShowCreateModal(false) : setShowCreateModal(true);
   };
 
   return (
     <>
-      <form className="container" onSubmit={showDelete}>
+      <form className="container" onSubmit={showCreate}>
         <h2>Create an offer!</h2>
         <label htmlFor="username">Game Title</label>
         <input
@@ -102,9 +106,9 @@ export default function OfferCreate() {
             Create
           </button>
         </div>
-        {showDeleteModal && (
+        {showCreateModal && (
           <Modal
-            showDelete={showDelete}
+            showModal={showCreate}
             submitHandler={onSubmit}
             title={values.title}
             text={"Are you sure you want to create this offer?"}

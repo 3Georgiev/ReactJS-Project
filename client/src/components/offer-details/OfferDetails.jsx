@@ -108,7 +108,7 @@ export default function OfferDetails() {
 
       {showDeleteModal && (
         <Modal
-          showDelete={showDelete}
+          showModal={showDelete}
           submitHandler={offerDeleteBtnHandler}
           title={offer.title}
           text={"Are you sure you want to delete this offer?"}

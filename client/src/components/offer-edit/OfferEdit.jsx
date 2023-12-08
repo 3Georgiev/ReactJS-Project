@@ -15,7 +15,7 @@ const EditFromKeys = {
 };
 
 export default function OfferEdit() {
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
   const [offer, setOffer] = useState({
     [EditFromKeys.Title]: "",
     [EditFromKeys.Price]: 0,
@@ -50,14 +50,14 @@ export default function OfferEdit() {
     }));
   };
 
-  const showDelete = (e) => {
+  const showEdit = (e) => {
     e.preventDefault();
-    showDeleteModal ? setShowDeleteModal(false) : setShowDeleteModal(true);
+    showEditModal ? setShowEditModal(false) : setShowEditModal(true);
   };
 
   return (
     <>
-      <form className="container" onSubmit={showDelete}>
+      <form className="container" onSubmit={showEdit}>
         <h2>Making changes</h2>
         <label htmlFor="username">Game Title</label>
         <input
@@ -117,9 +117,9 @@ export default function OfferEdit() {
             Edit
           </button>
         </div>
-        {showDeleteModal && (
+        {showEditModal && (
           <Modal
-            showDelete={showDelete}
+            showModal={showEdit}
             submitHandler={editSubmitHandler}
             title={offer.title}
             text={"Are you sure you want to edit this offer?"}

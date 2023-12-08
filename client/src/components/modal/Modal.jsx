@@ -1,7 +1,7 @@
-export default function Modal({ showDelete, submitHandler, text, title }) {
+export default function Modal({ showModal, submitHandler, text, title }) {
   const handleOverlayClick = (e) => {
     if (e.target.classList.contains("modal")) {
-      showDelete();
+      showModal();
     }
   };
   return (
@@ -13,7 +13,7 @@ export default function Modal({ showDelete, submitHandler, text, title }) {
             <u>{title}</u>
           </p>
           <div className="modal-buttons">
-            <button onClick={showDelete}>No</button>
+            <button onClick={showModal}>No</button>
             <button onClick={submitHandler}>Yes</button>
           </div>
         </div>
