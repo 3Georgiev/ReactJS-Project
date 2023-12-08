@@ -51,7 +51,7 @@ export default function OfferEdit() {
   };
 
   const showEdit = (e) => {
-    e.preventDefault();
+    e ? e.preventDefault() : null;
     showEditModal ? setShowEditModal(false) : setShowEditModal(true);
   };
 

@@ -20,10 +20,6 @@ export default function OfferCreate() {
   const navigate = useNavigate();
 
   const createSubmitHandler = async (values) => {
-    if (values.price < 5) {
-      console.log("error");
-      return;
-    }
     await offerService.create(values);
     navigate(Path.Offers);
   };
@@ -38,7 +34,7 @@ export default function OfferCreate() {
   });
 
   const showCreate = (e) => {
-    e.preventDefault();
+    e ? e.preventDefault() : null;
     showCreateModal ? setShowCreateModal(false) : setShowCreateModal(true);
   };
 
