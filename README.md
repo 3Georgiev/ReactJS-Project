@@ -13,6 +13,7 @@ This project is a small game shop web application that allows users to register,
 
 ## Prerequisites
 
+h
 Make sure you have the following installed before running the project:
 
 - Node.js

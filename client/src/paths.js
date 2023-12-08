@@ -9,6 +9,7 @@ const Path = {
   Logout: "/logout",
   Search: "/search",
   Profile: "/profile",
+  Free: "/free-games",
 };
 
 export default Path;

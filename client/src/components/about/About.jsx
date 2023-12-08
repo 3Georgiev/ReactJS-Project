@@ -8,19 +8,15 @@ export default function About() {
           <div className="col-md-5 ml-auto">
             <div className="detail-box pr-md-3">
               <div className="heading_container">
-                <h2>We Provide Best For You</h2>
+                <h2>Welcome to the Game Shop App!</h2>
               </div>
               <p>
-                Totam architecto rem beatae veniam, cum officiis adipisci soluta
-                perspiciatis ipsa, expedita maiores quae accusantium. Animi
-                veniam aperiam, necessitatibus mollitia ipsum id optio ipsa odio
-                ab facilis sit labore officia! Repellat expedita, deserunt eum
-                soluta rem culpa. Aut, necessitatibus cumque. Voluptas
-                consequuntur vitae aperiam animi sint earum, ex unde cupiditate,
-                molestias dolore quos quas possimus eveniet facilis magnam?
-                Vero, dicta.
+                Explore a world of gaming where you can register, login, and
+                engage with a community of fellow gamers. Create, edit, and
+                share offers, and join the conversation by leaving comments.
+                Dive into the ultimate gaming experience with our user-friendly
+                platform. Ready to play? Start your adventure now!
               </p>
-              <a href=""> Read More </a>
             </div>
           </div>
           <div className="col-md-6 px-0">

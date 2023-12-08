@@ -18,6 +18,7 @@ import OfferDetails from "./components/offer-details/OfferDetails";
 import OfferEdit from "./components/offer-edit/OfferEdit";
 import Search from "./components/search/search";
 import Profile from "./components/profile/Profile";
+import FreeGames from "./components/free-games/FreeGames";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path={Path.Login} element={<Login />} />
           <Route path={Path.Logout} element={<Logout />} />
           <Route path={Path.Profile} element={<Profile />} />
+          <Route path={Path.Free} element={<FreeGames />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <InfoSection />

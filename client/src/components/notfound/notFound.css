@@ -24,18 +24,3 @@
 .form-btn:hover {
   background-color: #ce5600;
 }
-
-.extra-links {
-  margin-top: 20px;
-}
-
-.extra-links a {
-  color: #212529;
-  text-decoration: none;
-  margin: 0 10px;
-  font-size: 14px;
-}
-
-.extra-links a:hover {
-  text-decoration: underline;
-}

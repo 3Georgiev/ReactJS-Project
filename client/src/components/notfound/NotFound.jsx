@@ -13,11 +13,6 @@ export default function NotFound() {
         <Link to={Path.Home}>
           <button className="form-btn">Go Back Home</button>
         </Link>
-        <div className="extra-links">
-          <a href="#">Contact Support</a>
-          <span>|</span>
-          <a href="#">Report Issue</a>
-        </div>
       </div>
     </>
   );

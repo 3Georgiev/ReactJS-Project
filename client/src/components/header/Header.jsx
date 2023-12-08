@@ -103,6 +103,11 @@ export default function Header() {
                     Home
                   </Link>
                 </li>
+                <li className={`nav-item ${isActive(Path.Free)}`}>
+                  <Link to={Path.Free} className="nav-link">
+                    Free Games
+                  </Link>
+                </li>
                 <li className={`nav-item ${isActive(Path.Offers)}`}>
                   <Link to={Path.Offers} className="nav-link">
                     Offers

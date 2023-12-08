@@ -32,9 +32,9 @@ export default function InfoSection() {
             <div className="info_info">
               <h5>Information</h5>
               <p>
-                Eligendi sunt, provident, debitis nemo, facilis cupiditate velit
-                libero dolorum aperiam enim nulla iste maxime corrupti ad illo
-                libero minus.
+                Welcome to the Game Shop App! Explore a world of gaming where
+                you can engage with a community of fellow gamers. Ready to play?
+                Start your adventure now!
               </p>
             </div>
           </div>
