@@ -50,6 +50,7 @@ export default function OfferDetails() {
       .then((result) => {
         setComments((state) => [...state, result]);
       });
+    values.content = "";
   };
 
   const { values, onChange, onSubmit } = useForm(commentSubmitHandler, {

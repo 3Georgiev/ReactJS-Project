@@ -5,7 +5,7 @@ import useForm from "../../hooks/useForm";
 import * as offerService from "../../services/offerService";
 import Path from "../../paths";
 import Modal from "../modal/Modal";
-import useFormValidator from "../../hooks/useFormValidator";
+import useFormValidator from "../../utils/formValidator";
 
 const CreateFormKeys = {
   Title: "title",
@@ -21,8 +21,9 @@ export default function OfferCreate() {
   const navigate = useNavigate();
 
   const createSubmitHandler = async (values) => {
-
+    const errors = validateValues();
     console.log(errors);
+
     return;
     await offerService.create(values);
     navigate(Path.Offers);
@@ -37,7 +38,7 @@ export default function OfferCreate() {
     [CreateFormKeys.Description]: "",
   });
 
-  const { errors, validateValues } = useFormValidator(values, {
+  const { validateValues } = useFormValidator(values, {
     [CreateFormKeys.Title]: { required: true, minLength: 3 },
     [CreateFormKeys.Price]: { required: true, minValue: 0.3 },
     [CreateFormKeys.Region]: { required: true, minLength: 2 },

@@ -1,9 +1,5 @@
-import { useState } from "react";
-
-export default function useFormValidator(values, validationRules) {
-  const [errors, setErrors] = useState({});
-
-  const validate = () => {
+export default function formValidator(values, validationRules) {
+  const validateValues = () => {
     const newErrors = {};
     Object.entries(validationRules).forEach(([key, rule]) => {
       if (rule.required && !values[key]) {
@@ -22,19 +18,14 @@ export default function useFormValidator(values, validationRules) {
         }$.`;
       }
     });
-    setErrors(newErrors);
+    return newErrors;
   };
 
   const toUpperCaseValue = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
-  const validateValues = () => {
-    validate();
-  };
-
   return {
-    errors,
     validateValues,
   };
 }

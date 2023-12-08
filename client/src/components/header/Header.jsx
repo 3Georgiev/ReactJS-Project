@@ -12,6 +12,7 @@ export default function Header() {
 
   const searchFormHadnler = (value) => {
     navigate(`${Path.Search}?query=${value.search}`);
+    value.search = "";
   };
   const { values, onChange, onSubmit } = useForm(searchFormHadnler, {
     search: "",
