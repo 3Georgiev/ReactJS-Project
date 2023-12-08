@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("accessToken", result.accessToken);
       navigate(Path.Home);
     } catch (err) {
-      console.log(err);
+      setAuthValidationErrors({ login: err.message });
     }
   };
 

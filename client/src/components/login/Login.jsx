@@ -11,7 +11,7 @@ const LoginFormKeys = {
 };
 
 export default function Login() {
-  const { loginSubmitHandler } = useContext(AuthContext);
+  const { loginSubmitHandler, authValidationErrors } = useContext(AuthContext);
   const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
     [LoginFormKeys.Email]: "",
     [LoginFormKeys.Password]: "",
@@ -43,6 +43,11 @@ export default function Login() {
           value={values[LoginFormKeys.Password]}
           onChange={onChange}
         />
+        {authValidationErrors.login && (
+          <p style={{ margin: "0px", color: "red" }}>
+            {authValidationErrors.login}
+          </p>
+        )}
         <div>
           <button className="login-form-btn" type="submit">
             Login
