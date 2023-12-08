@@ -5,8 +5,9 @@ import useForm from "../../hooks/useForm";
 import * as offerService from "../../services/offerService";
 import Path from "../../paths";
 import Modal from "../modal/Modal";
+import useFormValidator from "../../hooks/useFormValidator";
 
-const CreateFromKeys = {
+const CreateFormKeys = {
   Title: "title",
   Price: "price",
   Region: "region",
@@ -25,12 +26,21 @@ export default function OfferCreate() {
   };
 
   const { values, onChange, onSubmit } = useForm(createSubmitHandler, {
-    [CreateFromKeys.Title]: "",
-    [CreateFromKeys.Price]: 0,
-    [CreateFromKeys.Region]: "",
-    [CreateFromKeys.Platform]: "",
-    [CreateFromKeys.ImageUrl]: "",
-    [CreateFromKeys.Description]: "",
+    [CreateFormKeys.Title]: "",
+    [CreateFormKeys.Price]: 0,
+    [CreateFormKeys.Region]: "",
+    [CreateFormKeys.Platform]: "",
+    [CreateFormKeys.ImageUrl]: "",
+    [CreateFormKeys.Description]: "",
+  });
+
+  const { errors } = useFormValidator(values, {
+    [CreateFormKeys.Title]: { required: true, minLength: 3 },
+    [CreateFormKeys.Price]: { minValue: 5 },
+    [CreateFormKeys.Region]: { required: true },
+    [CreateFormKeys.Platform]: { required: true },
+    [CreateFormKeys.ImageUrl]: { required: true, validUrl: true },
+    [CreateFormKeys.Description]: { required: true },
   });
 
   const showCreate = (e) => {
@@ -42,60 +52,71 @@ export default function OfferCreate() {
     <>
       <form className="container" onSubmit={showCreate}>
         <h2>Create an offer!</h2>
-        <label htmlFor="username">Game Title</label>
+        <label htmlFor="title">Game Title</label>
         <input
           className="offer-create-form-input"
           placeholder="Example Title..."
+          autoComplete="on"
           onChange={onChange}
           type="text"
           id="title"
-          name={CreateFromKeys.Title}
-          value={values[CreateFromKeys.Title]}
+          name={CreateFormKeys.Title}
+          value={values[CreateFormKeys.Title]}
         />
-        <label htmlFor="email">Price</label>
+        <label htmlFor="price">Price</label>
         <input
           className="offer-create-form-input"
+          autoComplete="on"
           onChange={onChange}
           type="number"
-          name={CreateFromKeys.Price}
-          value={values[CreateFromKeys.Price]}
+          id="price"
+          name={CreateFormKeys.Price}
+          value={values[CreateFormKeys.Price]}
         />
-        <label htmlFor="password">Regional Limitation</label>
+        <label htmlFor="region">Regional Limitation</label>
         <input
           className="offer-create-form-input"
           placeholder="Europe/Global..."
+          autoComplete="on"
           onChange={onChange}
           type="text"
-          name={CreateFromKeys.Region}
-          value={values[CreateFromKeys.Region]}
+          id="region"
+          name={CreateFormKeys.Region}
+          value={values[CreateFormKeys.Region]}
         />
 
-        <label htmlFor="confirm-password">Platform</label>
+        <label htmlFor="platform">Platform</label>
         <input
           className="offer-create-form-input"
           placeholder="Steam/Origin/Xbox..."
+          autoComplete="on"
           onChange={onChange}
           type="text"
-          name={CreateFromKeys.Platform}
-          value={values[CreateFromKeys.Platform]}
+          id="platform"
+          name={CreateFormKeys.Platform}
+          value={values[CreateFormKeys.Platform]}
         />
-        <label htmlFor="confirm-password">Image Url</label>
+        <label htmlFor="imageUrl">Image Url</label>
         <input
           className="offer-create-form-input"
           placeholder="https://example/example.jpg..."
+          autoComplete="on"
           onChange={onChange}
           type="text"
-          name={CreateFromKeys.ImageUrl}
-          value={values[CreateFromKeys.ImageUrl]}
+          id="imageUrl"
+          name={CreateFormKeys.ImageUrl}
+          value={values[CreateFormKeys.ImageUrl]}
         />
-        <label htmlFor="confirm-password">Description</label>
+        <label htmlFor="description">Description</label>
         <textarea
           className="offer-create-form-description"
           placeholder="Game summary..."
+          autoComplete="on"
           onChange={onChange}
           type="text"
-          name={CreateFromKeys.Description}
-          value={values[CreateFromKeys.Description]}
+          id="description"
+          name={CreateFormKeys.Description}
+          value={values[CreateFormKeys.Description]}
         ></textarea>
         <div>
           <button className="offer-create-form-btn" type="submit">

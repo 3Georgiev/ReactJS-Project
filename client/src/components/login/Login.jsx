@@ -25,6 +25,7 @@ export default function Login() {
         <input
           className="login-form-input"
           placeholder="Your email..."
+          autoComplete="on"
           type="email"
           id="email"
           name={LoginFormKeys.Email}

@@ -30,6 +30,7 @@ export default function Register() {
         <input
           className="register-form-input"
           placeholder="Username..."
+          autoComplete="on"
           type="text"
           id="username"
           name={RegisterFormKeys.Username}
@@ -40,6 +41,7 @@ export default function Register() {
         <input
           className="register-form-input"
           placeholder="example@gamehaven.com"
+          autoComplete="on"
           type="email"
           id="email"
           name={RegisterFormKeys.Email}

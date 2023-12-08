@@ -59,53 +59,64 @@ export default function OfferEdit() {
     <>
       <form className="container" onSubmit={showEdit}>
         <h2>Making changes</h2>
-        <label htmlFor="username">Game Title</label>
+        <label htmlFor="title">Game Title</label>
         <input
           className="offer-edit-form-input"
+          autoComplete="on"
           onChange={onChange}
           type="text"
           id="title"
           name={EditFromKeys.Title}
           value={offer[EditFromKeys.Title]}
         />
-        <label htmlFor="email">Price</label>
+        <label htmlFor="price">Price</label>
         <input
           className="offer-edit-form-input"
+          autoComplete="on"
           onChange={onChange}
           type="number"
+          id="price"
           name={EditFromKeys.Price}
           value={offer[EditFromKeys.Price]}
         />
-        <label htmlFor="password">Regional Limitation</label>
+        <label htmlFor="region">Regional Limitation</label>
         <input
           className="offer-edit-form-input"
+          autoComplete="on"
           onChange={onChange}
           type="text"
+          id="region"
           name={EditFromKeys.Region}
           value={offer[EditFromKeys.Region]}
         />
 
-        <label htmlFor="confirm-password">Platform</label>
+        <label htmlFor="platform">Platform</label>
         <input
           className="offer-edit-form-input"
+          autoComplete="on"
           onChange={onChange}
           type="text"
+          id="platform"
           name={EditFromKeys.Platform}
           value={offer[EditFromKeys.Platform]}
         />
-        <label htmlFor="confirm-password">Image Url</label>
+        <label htmlFor="imageUrl">Image Url</label>
         <input
           className="offer-edit-form-input"
+          autoComplete="on"
           onChange={onChange}
           type="text"
+          id="imageUrl"
           name={EditFromKeys.ImageUrl}
           value={offer[EditFromKeys.ImageUrl]}
         />
-        <label htmlFor="confirm-password">Description</label>
+        <label htmlFor="description">Description</label>
         <textarea
           className="offer-edit-form-description"
+          autoComplete="on"
           onChange={onChange}
           type="text"
+          id="description"
           name={EditFromKeys.Description}
           value={offer[EditFromKeys.Description]}
         ></textarea>
