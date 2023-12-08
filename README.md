@@ -28,32 +28,32 @@ Make sure you have the following installed before running the project:
 
 2. Navigate to the server directory:
 
-   ```cd server
-
+   ```
+   cd server
    ```
 
 3. Start the server:
 
-   ```node server.js
-
+   ```
+   node server.js
    ```
 
 4. Open a new terminal window and navigate to the client directory:
 
-   ```cd client
-
+   ```
+   cd client
    ```
 
 5. Install client dependencies:
 
-   ```npm install
-
+   ```
+   npm install
    ```
 
 6. Start the client:
 
-   ```npm run dev
-
+   ```
+   npm run dev
    ```
 
 ## Usage
@@ -68,5 +68,4 @@ Make sure you have the following installed before running the project:
 ```
 peter@abv.bg ; 123456
 george@abv.bg ; 123456
-
 ```
