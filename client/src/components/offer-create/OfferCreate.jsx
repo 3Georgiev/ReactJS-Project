@@ -21,6 +21,9 @@ export default function OfferCreate() {
   const navigate = useNavigate();
 
   const createSubmitHandler = async (values) => {
+
+    console.log(errors);
+    return;
     await offerService.create(values);
     navigate(Path.Offers);
   };
@@ -34,13 +37,13 @@ export default function OfferCreate() {
     [CreateFormKeys.Description]: "",
   });
 
-  const { errors } = useFormValidator(values, {
+  const { errors, validateValues } = useFormValidator(values, {
     [CreateFormKeys.Title]: { required: true, minLength: 3 },
-    [CreateFormKeys.Price]: { minValue: 5 },
-    [CreateFormKeys.Region]: { required: true },
-    [CreateFormKeys.Platform]: { required: true },
+    [CreateFormKeys.Price]: { required: true, minValue: 0.3 },
+    [CreateFormKeys.Region]: { required: true, minLength: 2 },
+    [CreateFormKeys.Platform]: { required: true, minLength: 2 },
     [CreateFormKeys.ImageUrl]: { required: true, validUrl: true },
-    [CreateFormKeys.Description]: { required: true },
+    [CreateFormKeys.Description]: { required: true, minLength: 20 },
   });
 
   const showCreate = (e) => {
