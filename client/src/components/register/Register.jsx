@@ -5,6 +5,7 @@ import useForm from "../../hooks/useForm";
 import AuthContext from "../../context/authContext";
 import { Link } from "react-router-dom";
 import Path from "../../paths";
+import ErrorMessage from "../error-message/ErrorMessage";
 
 const RegisterFormKeys = {
   Email: "email",
@@ -39,11 +40,10 @@ export default function Register() {
           value={values[RegisterFormKeys.Username]}
           onChange={onChange}
         />
-        {authValidationErrors[RegisterFormKeys.Username] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {authValidationErrors[RegisterFormKeys.Username]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={RegisterFormKeys.Username}
+          authValidationErrors={authValidationErrors}
+        />
         <label htmlFor="email">Email</label>
         <input
           className="register-form-input"
@@ -55,11 +55,10 @@ export default function Register() {
           value={values[RegisterFormKeys.Email]}
           onChange={onChange}
         />
-        {authValidationErrors[RegisterFormKeys.Email] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {authValidationErrors[RegisterFormKeys.Email]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={RegisterFormKeys.Email}
+          authValidationErrors={authValidationErrors}
+        />
         <label htmlFor="password">Password</label>
         <input
           className="register-form-input"
@@ -71,11 +70,10 @@ export default function Register() {
           value={values[RegisterFormKeys.Password]}
           onChange={onChange}
         />
-        {authValidationErrors[RegisterFormKeys.Password] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {authValidationErrors[RegisterFormKeys.Password]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={RegisterFormKeys.Password}
+          authValidationErrors={authValidationErrors}
+        />
         <label htmlFor="confirm-password">Confirm password</label>
         <input
           className="register-form-input"
@@ -87,16 +85,14 @@ export default function Register() {
           value={values[RegisterFormKeys.PasswordConfirm]}
           onChange={onChange}
         />
-        {authValidationErrors[RegisterFormKeys.PasswordConfirm] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {authValidationErrors[RegisterFormKeys.PasswordConfirm]}
-          </p>
-        )}
-        {authValidationErrors.register && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {authValidationErrors.register}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={RegisterFormKeys.PasswordConfirm}
+          authValidationErrors={authValidationErrors}
+        />
+        <ErrorMessage
+          typeError={"register"}
+          authValidationErrors={authValidationErrors}
+        />
         <div>
           <button className="register-form-btn" type="submit">
             Register

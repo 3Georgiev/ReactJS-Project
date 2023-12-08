@@ -6,6 +6,7 @@ import * as offerService from "../../services/offerService";
 import Path from "../../paths";
 import Modal from "../modal/Modal";
 import formValidator from "../../utils/formValidator";
+import ErrorMessage from "../error-message/ErrorMessage";
 
 const CreateFormKeys = {
   Title: "title",
@@ -70,12 +71,10 @@ export default function OfferCreate() {
           name={CreateFormKeys.Title}
           value={values[CreateFormKeys.Title]}
         />
-        {validationErrors[CreateFormKeys.Title] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {validationErrors[CreateFormKeys.Title]}
-          </p>
-        )}
-
+        <ErrorMessage
+          typeError={CreateFormKeys.Title}
+          authValidationErrors={validationErrors}
+        />
         <label htmlFor="price">Price</label>
         <input
           className="offer-create-form-input"
@@ -86,11 +85,10 @@ export default function OfferCreate() {
           name={CreateFormKeys.Price}
           value={values[CreateFormKeys.Price]}
         />
-        {validationErrors[CreateFormKeys.Price] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {validationErrors[CreateFormKeys.Price]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={CreateFormKeys.Price}
+          authValidationErrors={validationErrors}
+        />
         <label htmlFor="region">Regional Limitation</label>
         <input
           className="offer-create-form-input"
@@ -102,11 +100,10 @@ export default function OfferCreate() {
           name={CreateFormKeys.Region}
           value={values[CreateFormKeys.Region]}
         />
-        {validationErrors[CreateFormKeys.Region] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {validationErrors[CreateFormKeys.Region]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={CreateFormKeys.Region}
+          authValidationErrors={validationErrors}
+        />
         <label htmlFor="platform">Platform</label>
         <input
           className="offer-create-form-input"
@@ -118,11 +115,10 @@ export default function OfferCreate() {
           name={CreateFormKeys.Platform}
           value={values[CreateFormKeys.Platform]}
         />
-        {validationErrors[CreateFormKeys.Platform] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {validationErrors[CreateFormKeys.Platform]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={CreateFormKeys.Platform}
+          authValidationErrors={validationErrors}
+        />
         <label htmlFor="imageUrl">Image Url</label>
         <input
           className="offer-create-form-input"
@@ -134,11 +130,10 @@ export default function OfferCreate() {
           name={CreateFormKeys.ImageUrl}
           value={values[CreateFormKeys.ImageUrl]}
         />
-        {validationErrors[CreateFormKeys.ImageUrl] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {validationErrors[CreateFormKeys.ImageUrl]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={CreateFormKeys.ImageUrl}
+          authValidationErrors={validationErrors}
+        />
         <label htmlFor="description">Description</label>
         <textarea
           className="offer-create-form-description"
@@ -150,11 +145,10 @@ export default function OfferCreate() {
           name={CreateFormKeys.Description}
           value={values[CreateFormKeys.Description]}
         ></textarea>
-        {validationErrors[CreateFormKeys.Description] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {validationErrors[CreateFormKeys.Description]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={CreateFormKeys.Description}
+          authValidationErrors={validationErrors}
+        />
         <div>
           <button className="offer-create-form-btn" type="submit">
             Create

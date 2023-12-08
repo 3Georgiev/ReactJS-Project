@@ -1,11 +1,11 @@
-import "./errorMessage.css";
-
-export default function ErrorMessage() {
+export default function ErrorMessage({ authValidationErrors, typeError }) {
   return (
-    <div className="error-messages-container">
-      <div key="1" className="error-message-box">
-        Wrong house foolllllllllllllllllllllllllll
-      </div>
-    </div>
+    <>
+      {authValidationErrors[typeError] && (
+        <p style={{ margin: "0px", color: "red" }}>
+          {authValidationErrors[typeError]}
+        </p>
+      )}
+    </>
   );
 }

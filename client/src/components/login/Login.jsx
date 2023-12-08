@@ -4,6 +4,7 @@ import useForm from "../../hooks/useForm";
 import AuthContext from "../../context/authContext";
 import { Link } from "react-router-dom";
 import Path from "../../paths";
+import ErrorMessage from "../error-message/ErrorMessage";
 
 const LoginFormKeys = {
   Email: "email",
@@ -43,11 +44,10 @@ export default function Login() {
           value={values[LoginFormKeys.Password]}
           onChange={onChange}
         />
-        {authValidationErrors.login && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {authValidationErrors.login}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={"login"}
+          authValidationErrors={authValidationErrors}
+        />
         <div>
           <button className="login-form-btn" type="submit">
             Login

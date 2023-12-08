@@ -5,6 +5,7 @@ import * as offerService from "../../services/offerService";
 import Path from "../../paths";
 import Modal from "../modal/Modal";
 import formValidator from "../../utils/formValidator";
+import ErrorMessage from "../error-message/ErrorMessage";
 
 const EditFromKeys = {
   Title: "title",
@@ -86,11 +87,10 @@ export default function OfferEdit() {
           name={EditFromKeys.Title}
           value={offer[EditFromKeys.Title]}
         />
-        {validationErrors[EditFromKeys.Title] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {validationErrors[EditFromKeys.Title]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={EditFromKeys.Title}
+          authValidationErrors={validationErrors}
+        />
         <label htmlFor="price">Price</label>
         <input
           className="offer-edit-form-input"
@@ -101,11 +101,10 @@ export default function OfferEdit() {
           name={EditFromKeys.Price}
           value={offer[EditFromKeys.Price]}
         />
-        {validationErrors[EditFromKeys.Price] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {validationErrors[EditFromKeys.Price]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={EditFromKeys.Price}
+          authValidationErrors={validationErrors}
+        />
         <label htmlFor="region">Regional Limitation</label>
         <input
           className="offer-edit-form-input"
@@ -116,11 +115,10 @@ export default function OfferEdit() {
           name={EditFromKeys.Region}
           value={offer[EditFromKeys.Region]}
         />
-        {validationErrors[EditFromKeys.Region] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {validationErrors[EditFromKeys.Region]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={EditFromKeys.Region}
+          authValidationErrors={validationErrors}
+        />
 
         <label htmlFor="platform">Platform</label>
         <input
@@ -132,11 +130,10 @@ export default function OfferEdit() {
           name={EditFromKeys.Platform}
           value={offer[EditFromKeys.Platform]}
         />
-        {validationErrors[EditFromKeys.Platform] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {validationErrors[EditFromKeys.Platform]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={EditFromKeys.Platform}
+          authValidationErrors={validationErrors}
+        />
         <label htmlFor="imageUrl">Image Url</label>
         <input
           className="offer-edit-form-input"
@@ -147,11 +144,10 @@ export default function OfferEdit() {
           name={EditFromKeys.ImageUrl}
           value={offer[EditFromKeys.ImageUrl]}
         />
-        {validationErrors[EditFromKeys.ImageUrl] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {validationErrors[EditFromKeys.ImageUrl]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={EditFromKeys.ImageUrl}
+          authValidationErrors={validationErrors}
+        />
         <label htmlFor="description">Description</label>
         <textarea
           className="offer-edit-form-description"
@@ -162,11 +158,10 @@ export default function OfferEdit() {
           name={EditFromKeys.Description}
           value={offer[EditFromKeys.Description]}
         ></textarea>
-        {validationErrors[EditFromKeys.Description] && (
-          <p style={{ margin: "0px", color: "red" }}>
-            {validationErrors[EditFromKeys.Description]}
-          </p>
-        )}
+        <ErrorMessage
+          typeError={EditFromKeys.Description}
+          authValidationErrors={validationErrors}
+        />
         <div>
           <Link to={`${Path.Offers}/${offerId}/details`}>
             <button className="offer-edit-form-btn">Back</button>
