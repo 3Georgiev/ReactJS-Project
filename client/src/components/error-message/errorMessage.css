@@ -1,0 +1,19 @@
+.error-messages-container {
+  position: fixed;
+  top: 180px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 9999;
+}
+
+.error-message-box {
+  width: 100%;
+  background-color: #c93535;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  text-align: center;
+}

@@ -5,7 +5,7 @@ import useForm from "../../hooks/useForm";
 import * as offerService from "../../services/offerService";
 import Path from "../../paths";
 import Modal from "../modal/Modal";
-import useFormValidator from "../../utils/formValidator";
+import formValidator from "../../utils/formValidator";
 
 const CreateFormKeys = {
   Title: "title",
@@ -18,13 +18,16 @@ const CreateFormKeys = {
 
 export default function OfferCreate() {
   const [showCreateModal, setShowCreateModal] = useState(false);
+  const [validationErrors, setValidationErrors] = useState({});
   const navigate = useNavigate();
 
   const createSubmitHandler = async (values) => {
     const errors = validateValues();
-    console.log(errors);
-
-    return;
+    if (Object.keys(errors).length > 0) {
+      setValidationErrors(errors);
+      setShowCreateModal(false);
+      return;
+    }
     await offerService.create(values);
     navigate(Path.Offers);
   };
@@ -38,12 +41,12 @@ export default function OfferCreate() {
     [CreateFormKeys.Description]: "",
   });
 
-  const { validateValues } = useFormValidator(values, {
+  const { validateValues } = formValidator(values, {
     [CreateFormKeys.Title]: { required: true, minLength: 3 },
     [CreateFormKeys.Price]: { required: true, minValue: 0.3 },
     [CreateFormKeys.Region]: { required: true, minLength: 2 },
     [CreateFormKeys.Platform]: { required: true, minLength: 2 },
-    [CreateFormKeys.ImageUrl]: { required: true, validUrl: true },
+    [CreateFormKeys.ImageUrl]: { required: true },
     [CreateFormKeys.Description]: { required: true, minLength: 20 },
   });
 
@@ -67,6 +70,12 @@ export default function OfferCreate() {
           name={CreateFormKeys.Title}
           value={values[CreateFormKeys.Title]}
         />
+        {validationErrors[CreateFormKeys.Title] && (
+          <p style={{ margin: "0px", color: "red" }}>
+            {validationErrors[CreateFormKeys.Title]}
+          </p>
+        )}
+
         <label htmlFor="price">Price</label>
         <input
           className="offer-create-form-input"
@@ -77,6 +86,11 @@ export default function OfferCreate() {
           name={CreateFormKeys.Price}
           value={values[CreateFormKeys.Price]}
         />
+        {validationErrors[CreateFormKeys.Price] && (
+          <p style={{ margin: "0px", color: "red" }}>
+            {validationErrors[CreateFormKeys.Price]}
+          </p>
+        )}
         <label htmlFor="region">Regional Limitation</label>
         <input
           className="offer-create-form-input"
@@ -88,7 +102,11 @@ export default function OfferCreate() {
           name={CreateFormKeys.Region}
           value={values[CreateFormKeys.Region]}
         />
-
+        {validationErrors[CreateFormKeys.Region] && (
+          <p style={{ margin: "0px", color: "red" }}>
+            {validationErrors[CreateFormKeys.Region]}
+          </p>
+        )}
         <label htmlFor="platform">Platform</label>
         <input
           className="offer-create-form-input"
@@ -100,6 +118,11 @@ export default function OfferCreate() {
           name={CreateFormKeys.Platform}
           value={values[CreateFormKeys.Platform]}
         />
+        {validationErrors[CreateFormKeys.Platform] && (
+          <p style={{ margin: "0px", color: "red" }}>
+            {validationErrors[CreateFormKeys.Platform]}
+          </p>
+        )}
         <label htmlFor="imageUrl">Image Url</label>
         <input
           className="offer-create-form-input"
@@ -111,6 +134,11 @@ export default function OfferCreate() {
           name={CreateFormKeys.ImageUrl}
           value={values[CreateFormKeys.ImageUrl]}
         />
+        {validationErrors[CreateFormKeys.ImageUrl] && (
+          <p style={{ margin: "0px", color: "red" }}>
+            {validationErrors[CreateFormKeys.ImageUrl]}
+          </p>
+        )}
         <label htmlFor="description">Description</label>
         <textarea
           className="offer-create-form-description"
@@ -122,6 +150,11 @@ export default function OfferCreate() {
           name={CreateFormKeys.Description}
           value={values[CreateFormKeys.Description]}
         ></textarea>
+        {validationErrors[CreateFormKeys.Description] && (
+          <p style={{ margin: "0px", color: "red" }}>
+            {validationErrors[CreateFormKeys.Description]}
+          </p>
+        )}
         <div>
           <button className="offer-create-form-btn" type="submit">
             Create
