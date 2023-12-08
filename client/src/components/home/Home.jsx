@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import WhyUs from "../why-us/WhyUs";
 import "./home.css";
+import { useEffect, useState } from "react";
 import * as offerService from "../../services/offerService";
+import WhyUs from "../why-us/WhyUs";
 import HomeLatestItem from "./home-latest-item/HomeLatestItem";
 import HomeLatestItemNoResult from "./home-latest-item/HomeLatestItemNoResult";
 

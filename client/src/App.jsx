@@ -17,6 +17,7 @@ import OfferList from "./components/offer-list/OfferList";
 import OfferDetails from "./components/offer-details/OfferDetails";
 import OfferEdit from "./components/offer-edit/OfferEdit";
 import Search from "./components/search/search";
+import Profile from "./components/profile/Profile";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path={Path.Register} element={<Register />} />
           <Route path={Path.Login} element={<Login />} />
           <Route path={Path.Logout} element={<Logout />} />
+          <Route path={Path.Profile} element={<Profile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <InfoSection />

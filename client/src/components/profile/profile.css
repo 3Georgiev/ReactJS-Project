@@ -1,0 +1,106 @@
+.profile_section {
+  background-color: #f7f7f7;
+  color: #272727;
+  padding: 20px;
+}
+
+.profile_section .row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.profile_section .col-md-5 {
+  order: 1;
+}
+
+.profile_section .col-md-6 {
+  order: 2;
+}
+
+.profile_section .detail-box {
+  margin: 0;
+}
+
+.profile_section .user-info {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.profile_section .offers-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.profile_section .offers-box h3 {
+  text-align: center;
+  width: 100%;
+}
+
+.profile_section .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin: 15px;
+  position: relative;
+  overflow: hidden;
+  width: calc(25% - 30px);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile_section .box .img-box {
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+}
+
+.profile_section .box .img-box img {
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.profile_section .box .img-box .details-btn {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  background-color: #272727;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+}
+
+.profile_section .box .details-btn:hover {
+  background-color: #ff6c00;
+}
+
+.profile_section .box .detail-box {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.profile_section .box .product_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile_section .box .product_info h5 {
+  font-size: 14px;
+  margin: 5px 0;
+}

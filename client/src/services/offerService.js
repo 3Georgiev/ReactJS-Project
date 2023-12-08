@@ -11,6 +11,9 @@ export const getAll = async (viewmore) => {
     );
   }
 };
+export const getUserCreated = async (ownerId) => {
+  return await request.get(`${baseUrl}?where=_ownerId%3D%22${ownerId}%22`);
+};
 
 export const getOne = async (offerId) => {
   const result = await request.get(`${baseUrl}/${offerId}`);

@@ -58,10 +58,16 @@ export default function Header() {
                   </Link>
                 </>
               ) : (
-                <Link to={Path.Logout} className="account-link">
-                  <i className="fa fa-sign-out" aria-hidden="true" />
-                  <span> Logout </span>
-                </Link>
+                <>
+                  <Link to={Path.Profile} className="account-link">
+                    <i className="fa fa-user" aria-hidden="true" />
+                    <span> Profile </span>
+                  </Link>
+                  <Link to={Path.Logout} className="account-link">
+                    <i className="fa fa-sign-out" aria-hidden="true" />
+                    <span> Logout </span>
+                  </Link>
+                </>
               )}
             </div>
           </div>
