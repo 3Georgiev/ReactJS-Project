@@ -45,17 +45,20 @@ export const AuthProvider = ({ children }) => {
       setAuthValidationErrors(errors);
       return;
     }
+    try {
+      const result = await authService.register(
+        values.email,
+        values.password,
+        values.username
+      );
 
-    const result = await authService.register(
-      values.email,
-      values.password,
-      values.username
-    );
-
-    setAuthValidationErrors({});
-    setAuth(result);
-    localStorage.setItem("accessToken", result.accessToken);
-    navigate(Path.Home);
+      setAuthValidationErrors({});
+      setAuth(result);
+      localStorage.setItem("accessToken", result.accessToken);
+      navigate(Path.Home);
+    } catch (err) {
+      setAuthValidationErrors({ register: err.message });
+    }
   };
 
   const logoutHandler = () => {

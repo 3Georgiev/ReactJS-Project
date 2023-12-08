@@ -92,6 +92,11 @@ export default function Register() {
             {authValidationErrors[RegisterFormKeys.PasswordConfirm]}
           </p>
         )}
+        {authValidationErrors.register && (
+          <p style={{ margin: "0px", color: "red" }}>
+            {authValidationErrors.register}
+          </p>
+        )}
         <div>
           <button className="register-form-btn" type="submit">
             Register
