@@ -13,6 +13,7 @@ export default function OfferDetails() {
   const [offer, setOffer] = useState({});
   const [comments, setComments] = useState([]);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [commentError, setCommentError] = useState(false);
 
   const { isAuthenticated, userId, username } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -45,6 +46,11 @@ export default function OfferDetails() {
   };
 
   const commentSubmitHandler = (values) => {
+    if (values.content.length < 5) {
+      setCommentError(true);
+      return;
+    }
+    setCommentError(false);
     commentService
       .create(offerId, { ...values, ownerUsername: username })
       .then((result) => {
@@ -146,6 +152,11 @@ export default function OfferDetails() {
             />
 
             <button>Add Comment</button>
+            {commentError && (
+              <p style={{ marginTop: "10px", color: "red" }}>
+                Comment must be longer than 5 characters!
+              </p>
+            )}
           </form>
         )}
       </div>
