@@ -9,7 +9,7 @@
 
 ## Description
 
-This project is a small game shop web application that allows users to register, login, create, edit, delete offers, and comment on them. For the server side we are using SoftUni's practice server.
+This project is a small game shop web application that allows users to register, login, create, edit, search, delete offers, and comment on them. For the server side, we are using SoftUni's practice server. This project is developed as part of the final course at SoftUni and is implemented in React.
 
 ## Prerequisites
 
