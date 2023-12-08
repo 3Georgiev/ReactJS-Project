@@ -22,12 +22,7 @@ export default function Search() {
       {searchResult.length > 0 ? (
         <div className="container">
           <div className="heading_container heading_center">
-            <h2>
-              {" "}
-              {searchQuery !== ""
-                ? `Matches for: "${searchQuery}"`
-                : navigate(Path.Offers)}
-            </h2>
+            <h2>Matches for: "{searchQuery}"</h2>
           </div>
           <div className="row">
             {searchResult.map((searchResult) => (
