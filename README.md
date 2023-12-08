@@ -22,50 +22,54 @@ Make sure you have the following installed before running the project:
 
 1. Clone the repository:
 
-   ```bash
+```bash
    git clone https://github.com/3Georgiev/ReactJS-Project
-   ```
+
+```
 
 2. Navigate to the server directory:
 
-   ```
-   cd server
-   ```
+```bash
+ cd server
+```
 
 3. Start the server:
 
-   ```
-   node server.js
-   ```
+```bash
+node server.js
+```
 
 4. Open a new terminal window and navigate to the client directory:
 
-   ```
-   cd client
-   ```
+```bash
+cd client
+```
 
 5. Install client dependencies:
 
-   ```
-   npm install
-   ```
+```bash
+npm install
+```
 
 6. Start the client:
 
-   ```
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
 ## Usage
 
 1. Open your web browser and go to http://localhost:3000 to access the game shop application.
 2. Register or log in to your account.
-3. Explore the features such as creating, editing, and deleting offers, as well as commenting on them.
-   Features
+3. Explore the features such as creating, editing, searching and deleting offers, as well as commenting on them.
 
 4. Default users:
 
-```
-peter@abv.bg ; 123456
-george@abv.bg ; 123456
-```
+- **User 1:**
+
+  - Email: peter@abv.bg
+  - Password: 123456
+
+- **User 2:**
+  - Email: george@abv.bg
+  - Password: 123456
