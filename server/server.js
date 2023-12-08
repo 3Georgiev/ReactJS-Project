@@ -1454,7 +1454,7 @@
         region: "Global",
         platform: "Steam",
         imageUrl:
-          "https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.0/c_scale,w_1200/ncom/software/switch/70010000014724/72ce0a17215521a167c3da579db4cc48a2f7a52eacc81ad985ba20fd6817fdc2",
+          "https://assets.xboxservices.com/assets/13/cf/13cf037e-0e97-4812-90d9-b18791367f09.jpg?n=Hogwarts-Legacy_GLP-Page-Hero-1084_Redesign_1920x1080_01.jpg",
         description:
           "Hogwarts Legacy is an action-RPG video game developed by Avalanche Software and published by Portkey Games. It's the first game set in the Wizarding World of Harry Potter not to feature the titular character in some shape and form. Hogwarts Legacy is set in the 19th century, and the player controls a new student attending the best school for witches and wizards in Great Britain. The gameplay will allow the player to explore the open-world environment, learn spells, and use them in various situations.",
         _createdOn: 1615545143015,
@@ -1467,7 +1467,7 @@
         region: "Global",
         platform: "Gog",
         imageUrl:
-          "https://cdn1.epicgames.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7",
+          "https://www.themarysue.com/wp-content/uploads/2020/12/Cyberpunk-2077.jpg",
         description:
           "The definitive Cyberpunk 2077 experience! Start your rise to the top of Night City as V, a cyber-enhanced mercenary for hire, and build your legend with every quest the city has to offer. Cyberpunk 2077, an open-world action-adventure RPG set in the deadliest city of the dark future. Accompanied by long-dead rockerboy Johnny Silverhand — played by Keanu Reeves — grow your legend as you explore the secrets of a powerful cybernetic implant.",
         _createdOn: 1615545572296,
@@ -1480,7 +1480,7 @@
         region: "Europe",
         platform: "Steam",
         imageUrl:
-          "https://cdn.cloudflare.steamstatic.com/steam/apps/813780/capsule_616x353.jpg?t=1699054682",
+          "https://cdn.cloudflare.steamstatic.com/steam/apps/813780/capsule_616x353.jpg",
         description:
           "Age of Empires II: Definitive Edition celebrates the 20th anniversary of one of the most popular strategy games ever with stunning 4K Ultra HD graphics, a new and fully remastered soundtrack, and brand-new content, “The Last Khans” with 3 new campaigns and 4 new civilizations. Explore all the original campaigns like never before as well as the best-selling expansions, spanning over 200 hours of gameplay and 1,000 years of human history. Head online to challenge other players with 35 different civilizations in your quest for world domination throughout the ages. Choose your path to greatness with this definitive remaster to one of the most beloved strategy games of all time.",
         _createdOn: 1615546332126,
@@ -1506,7 +1506,7 @@
         region: "Global",
         platform: "Xbox",
         imageUrl:
-          "https://www.gaming-grounds.de/wp-content/uploads/2021/01/rust-survival-game.jpg.webp",
+          "https://www.gaming-grounds.de/wp-content/uploads/2021/01/rust-survival-game.jpg",
         description:
           "The only aim in Rust is to survive. Everything wants you to die - the island’s wildlife and other inhabitants, the environment, other survivors. Do whatever it takes to last another night.\n\n\n\nRust is in its 9th year and has now had over 350 content updates, with a guaranteed content patch every month. From regular balance fixes and improvements to AI and graphics updates to adding content like new maps, musical instruments, trains and drones, as well as regular seasons and events, there’s always something interesting or dangerous (or both) happening on the island. Updates to the game include:",
         _createdOn: 1701880982693,
@@ -1519,7 +1519,7 @@
         region: "EU",
         platform: "Steam",
         imageUrl:
-          "https://stevivor.com/wp-content/uploads/2022/02/elden-ring-990x556.webp",
+          "https://fossbytes.com/wp-content/uploads/2022/03/elden-ring-easy-mode-mod.jpg",
         description:
           "\nThe Golden Order has been broken.\n\nRise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.\n\nIn the Lands Between ruled by Queen Marika the Eternal, the Elden Ring, the source of the Erdtree, has been shattered.\n\nMarika's offspring, demigods all, claimed the shards of the Elden Ring known as the Great Runes, and the mad taint of their newfound strength triggered a war: The Shattering. A war that meant abandonment by the Greater Will.\n\nAnd now the guidance of grace will be brought to the Tarnished who were spurned by the grace of gold and exiled from the Lands Between. Ye dead who yet live, your grace long lost, follow the path to the Lands Between beyond the foggy sea to stand before the Elden Ring.\n\nAnd become the Elden Lord.",
         _createdOn: 1701881088081,
@@ -1545,7 +1545,7 @@
         region: "Global",
         platform: "Steam",
         imageUrl:
-          "https://gaming-cdn.com/images/products/761/orig/mount-and-blade-ii-bannerlord-pc-game-steam-cover.jpg?v=1697644479",
+          "https://gaming-cdn.com/images/products/761/orig/mount-and-blade-ii-bannerlord-pc-game-steam-cover.jpg",
         description:
           "Get into the heat of battle in Mount & Blade II: Bannerlord, one of the most awaited games of all time. Submerge yourself in a realistic medieval world, where kingdoms constantly fight for power and resources. Lead a warrior's life, from tasting everyday reality of towns to leading troops in sieges and huge battles. This is an RPG to remember.",
         _createdOn: 1701881215809,
