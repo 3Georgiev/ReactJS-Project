@@ -19,31 +19,37 @@ import OfferEdit from "./components/offer-edit/OfferEdit";
 import Search from "./components/search/search";
 import Profile from "./components/profile/Profile";
 import FreeGames from "./components/free-games/FreeGames";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (
-    <AuthProvider>
-      <div className="hero_area">
-        <Header />
-        <Routes>
-          <Route path={Path.Home} element={<Home />} />
-          <Route path={Path.About} element={<About />} />
-          <Route path={Path.Offers} element={<OfferList />} />
-          <Route path={Path.OfferCreate} element={<OfferCreate />} />
-          <Route path={`/offers/:offerId/details`} element={<OfferDetails />} />
-          <Route path={`/offers/:offerId/edit`} element={<OfferEdit />} />
-          <Route path={Path.Search} element={<Search />} />
-          <Route path={Path.Register} element={<Register />} />
-          <Route path={Path.Login} element={<Login />} />
-          <Route path={Path.Logout} element={<Logout />} />
-          <Route path={Path.Profile} element={<Profile />} />
-          <Route path={Path.Free} element={<FreeGames />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <InfoSection />
-        <Footer />
-      </div>
-    </AuthProvider>
+    <ErrorBoundary>
+      <AuthProvider>
+        <div className="hero_area">
+          <Header />
+          <Routes>
+            <Route path={Path.Home} element={<Home />} />
+            <Route path={Path.About} element={<About />} />
+            <Route path={Path.Offers} element={<OfferList />} />
+            <Route path={Path.OfferCreate} element={<OfferCreate />} />
+            <Route
+              path={`/offers/:offerId/details`}
+              element={<OfferDetails />}
+            />
+            <Route path={`/offers/:offerId/edit`} element={<OfferEdit />} />
+            <Route path={Path.Search} element={<Search />} />
+            <Route path={Path.Register} element={<Register />} />
+            <Route path={Path.Login} element={<Login />} />
+            <Route path={Path.Logout} element={<Logout />} />
+            <Route path={Path.Profile} element={<Profile />} />
+            <Route path={Path.Free} element={<FreeGames />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <InfoSection />
+          <Footer />
+        </div>
+      </AuthProvider>
+    </ErrorBoundary>
   );
 }
 
