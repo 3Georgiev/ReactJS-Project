@@ -12,7 +12,8 @@ export default function Footer() {
     <footer className="footer_section">
       <div className="container">
         <p>
-          © <span>{currentYear}</span> All Rights Reserved By GameHaven
+          © <span>{currentYear}</span> A game shop site developed by Georgi
+          Georgiev using React for SoftUni's ReactJS course
         </p>
       </div>
     </footer>

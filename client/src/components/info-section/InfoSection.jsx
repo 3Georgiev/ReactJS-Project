@@ -57,18 +57,12 @@ export default function InfoSection() {
           <div className="col-md-3">
             <div className="info_form">
               <div className="social_box">
-                <a href="">
-                  <i className="fa fa-facebook" aria-hidden="true" />
-                </a>
-                <a href="">
-                  <i className="fa fa-twitter" aria-hidden="true" />
-                </a>
-                <a href="">
-                  <i className="fa fa-instagram" aria-hidden="true" />
-                </a>
-                <a href="">
-                  <i className="fa fa-youtube" aria-hidden="true" />
-                </a>
+                <Link to={"https://github.com/3Georgiev/ReactJS-Project"}>
+                  <i className="fa fa-github" aria-hidden="true" />
+                </Link>
+                <Link to={"https://www.linkedin.com/"}>
+                  <i className="fa fa-linkedin" aria-hidden="true" />
+                </Link>
               </div>
             </div>
           </div>
