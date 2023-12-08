@@ -6,7 +6,10 @@ export default function formValidator(values, validationRules) {
         newErrors[key] = `${toUpperCaseValue(key)} is required.`;
       }
 
-      if (rule.minLength !== undefined && values[key].length < rule.minLength) {
+      if (
+        rule.minLength !== undefined &&
+        values[key].trim().length < rule.minLength
+      ) {
         newErrors[key] = `${toUpperCaseValue(key)} must be at least ${
           rule.minLength
         } characters long.`;

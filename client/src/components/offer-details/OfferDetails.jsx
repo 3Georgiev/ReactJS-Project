@@ -46,7 +46,7 @@ export default function OfferDetails() {
   };
 
   const commentSubmitHandler = (values) => {
-    if (values.content.length < 5) {
+    if (values.content.trim().length < 5) {
       setCommentError(true);
       return;
     }
