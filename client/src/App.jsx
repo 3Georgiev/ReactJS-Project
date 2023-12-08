@@ -36,15 +36,15 @@ function App() {
             <Route path={Path.Search} element={<Search />} />
             <Route path={Path.Register} element={<Register />} />
             <Route path={Path.Login} element={<Login />} />
+            <Route
+              path={`/offers/:offerId/details`}
+              element={<OfferDetails />}
+            />
 
             <Route element={<AuthGuard />}>
               <Route path={Path.Logout} element={<Logout />} />
               <Route path={Path.Profile} element={<Profile />} />
               <Route path={Path.OfferCreate} element={<OfferCreate />} />
-              <Route
-                path={`/offers/:offerId/details`}
-                element={<OfferDetails />}
-              />
               <Route path={`/offers/:offerId/edit`} element={<OfferEdit />} />
             </Route>
 
