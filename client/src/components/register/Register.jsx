@@ -14,7 +14,9 @@ const RegisterFormKeys = {
 };
 
 export default function Register() {
-  const { registerSubmitHandler } = useContext(AuthContext);
+  const { registerSubmitHandler, authValidationErrors } =
+    useContext(AuthContext);
+
   const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
     [RegisterFormKeys.Email]: "",
     [RegisterFormKeys.Username]: "",
@@ -37,6 +39,11 @@ export default function Register() {
           value={values[RegisterFormKeys.Username]}
           onChange={onChange}
         />
+        {authValidationErrors[RegisterFormKeys.Username] && (
+          <p style={{ margin: "0px", color: "red" }}>
+            {authValidationErrors[RegisterFormKeys.Username]}
+          </p>
+        )}
         <label htmlFor="email">Email</label>
         <input
           className="register-form-input"
@@ -48,6 +55,11 @@ export default function Register() {
           value={values[RegisterFormKeys.Email]}
           onChange={onChange}
         />
+        {authValidationErrors[RegisterFormKeys.Email] && (
+          <p style={{ margin: "0px", color: "red" }}>
+            {authValidationErrors[RegisterFormKeys.Email]}
+          </p>
+        )}
         <label htmlFor="password">Password</label>
         <input
           className="register-form-input"
@@ -59,7 +71,11 @@ export default function Register() {
           value={values[RegisterFormKeys.Password]}
           onChange={onChange}
         />
-
+        {authValidationErrors[RegisterFormKeys.Password] && (
+          <p style={{ margin: "0px", color: "red" }}>
+            {authValidationErrors[RegisterFormKeys.Password]}
+          </p>
+        )}
         <label htmlFor="confirm-password">Confirm password</label>
         <input
           className="register-form-input"
@@ -71,6 +87,11 @@ export default function Register() {
           value={values[RegisterFormKeys.PasswordConfirm]}
           onChange={onChange}
         />
+        {authValidationErrors[RegisterFormKeys.PasswordConfirm] && (
+          <p style={{ margin: "0px", color: "red" }}>
+            {authValidationErrors[RegisterFormKeys.PasswordConfirm]}
+          </p>
+        )}
         <div>
           <button className="register-form-btn" type="submit">
             Register

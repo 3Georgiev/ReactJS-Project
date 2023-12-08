@@ -26,6 +26,12 @@ export default function formValidator(values, validationRules) {
           key
         )} must end with jpg, jpeg, png.`;
       }
+
+      if (key === "confirm-password") {
+        if (values[key] !== values["password"]) {
+          newErrors[key] = "Passwords do not match.";
+        }
+      }
     });
     return newErrors;
   };
