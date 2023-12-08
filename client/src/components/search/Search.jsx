@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import SearchItem from "./search-item/SearchItem";
 import SearchListNoResult from "./search-noresult/SearchNoResult";
 import { search } from "../../services/offerService";
+import Path from "../../paths";
 
 export default function Search() {
   const [searchResult, setSearchResult] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate();
   const searchQuery = new URLSearchParams(location.search).get("query");
 
   useEffect(() => {
@@ -20,7 +22,12 @@ export default function Search() {
       {searchResult.length > 0 ? (
         <div className="container">
           <div className="heading_container heading_center">
-            <h2>Matches for: "{searchQuery}"</h2>
+            <h2>
+              {" "}
+              {searchQuery !== ""
+                ? `Matches for: "${searchQuery}"`
+                : navigate(Path.Offers)}
+            </h2>
           </div>
           <div className="row">
             {searchResult.map((searchResult) => (
