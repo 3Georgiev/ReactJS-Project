@@ -82,7 +82,7 @@ npm run dev
   - Users can create, delete, and update their own offers.
   - Each offer has a details page for in-depth information.
 
-  - **All Offers Page:**
+- **All Offers Page:**
 
   - A dedicated page showing all available offers.
 
