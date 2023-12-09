@@ -3,17 +3,26 @@
 ## Table of Contents
 
 - [Description](#description)
+- [Technologies Used](#technologies-used)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
+- [Features](#features)
 - [Usage](#usage)
 
 ## Description
 
 This project is a small game shop web application that allows users to register, login, create, edit, search, delete offers, and comment on them. For the server side, we are using SoftUni's practice server. This project is developed as part of the final course at SoftUni and is implemented in React.
 
+## Technologies Used
+
+- React: A JavaScript library for building user interfaces.
+- Vite: A fast build tool that focuses on frontend development.
+- React Router DOM: Declarative routing for React.js.
+- npm: Node Package Manager for managing project dependencies.
+- SoftUni's Practice Server: Server provided by SoftUni for practicing purposes.
+
 ## Prerequisites
 
-h
 Make sure you have the following installed before running the project:
 
 - Node.js
@@ -57,6 +66,36 @@ npm install
 ```bash
 npm run dev
 ```
+
+## Features
+
+- **Authentication:**
+
+  - Users can register and log in to the application.
+
+- **User Profile:**
+
+  - Each user has a profile page where they can view their own offers and user data.
+
+- **Offer Management:**
+
+  - Users can create, delete, and update their own offers.
+  - Each offer has a details page for in-depth information.
+
+  - **All Offers Page:**
+
+  - A dedicated page showing all available offers.
+
+- **Commenting System:**
+
+  - All users can leave comments on each other's offers and delete their own.
+
+- **Free Games Page:**
+
+  - Displays a list of free games obtained from an external API.
+
+- **Search Feature:**
+  - Users can search for offers based on the title of the offers.
 
 ## Usage
 
