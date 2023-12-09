@@ -90,7 +90,7 @@ export default function OfferDetails() {
         </p>
         {isAuthenticated && (
           <div className="button_container">
-            {!isOwner && <button className="buy_btn">Buy</button>}
+            {/* {!isOwner && <button className="buy_btn">Buy</button>} */}
 
             {isOwner && (
               <div className="edit_delete_btns">
