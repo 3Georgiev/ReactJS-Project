@@ -105,7 +105,7 @@ export default function OfferDetails() {
         {!isAuthenticated && (
           <div className="details-extra-links">
             <Link to={Path.Login}>
-              To make a purchase you must have an account!
+              To leave a comment you must have an account!
             </Link>
             <span>|</span>
             <Link to={Path.Login}>Login</Link>
